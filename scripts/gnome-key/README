@@ -1,0 +1,5 @@
+msmtp
+./msmtp.sh -s -u USER -e SERVER
+
+offlineimap
+./offlineimap.sh
