@@ -9,7 +9,6 @@ macro index S "<save-message>+gmail/spam<enter>"
 macro index H "<save-message>+gmail/INBOX<enter>"
 
 macro index \cy "!/usr/local/bin/msmtp-runqueue.sh<enter>"
-macro index \cr "!/usr/local/bin/mailrun.sh<enter>"
 
 bind index   "{"      previous-thread
 bind index   "}"      next-thread

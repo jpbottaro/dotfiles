@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while true; do
+    /usr/bin/offlineimap -u Noninteractive.Quiet >/dev/null 2>&1
+    sleep 60
+done

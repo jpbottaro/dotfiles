@@ -1,3 +1,0 @@
-Becouse of buggy offlineimap, add in crontab -e
-
-*/5 * * * * /usr/local/bin/mailrun.sh
