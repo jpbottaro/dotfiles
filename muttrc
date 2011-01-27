@@ -2,7 +2,7 @@
 set mbox_type = Maildir
 set folder = "~/mail"
 set realname = "Juan Pablo Bottaro"
-set sendmail = "/usr/local/bin/msmtp-enqueue.sh"
+set sendmail = "msmtp-enqueue"
 
 # gmail settings
 set from = "jpbottaro@gmail.com"

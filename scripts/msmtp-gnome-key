@@ -149,7 +149,7 @@ def main():
 
     if not opts.setpass and not opts.getpass and not opts.delpass:
         parser.print_help()
-        print "ERR: You have to use -s or -g or -d"
+        print "Usage: -s -u USER -e SERVER"
         ret = False
     elif not opts.username or not opts.server:
         parser.print_help()
