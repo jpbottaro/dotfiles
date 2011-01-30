@@ -1,15 +1,14 @@
 [general]
 ui = TTY.TTYUI
 accounts = gmail
+maxsyncaccounts = 1
 pythonfile = ~/.offlineimap.py
 
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
-maxsyncaccounts = 3
-maxconnections = 3
 autorefresh = 3
-quick = 0
+quick = 3
 
 [Repository gmail-local]
 type = Maildir
