@@ -1,6 +1,9 @@
 #!/bin/bash
 
+# I use this script instead of a cron job becouse of problems with cron and
+# gnome-keyring. Add this to the users startup scripts/applications
+
 while true; do
-    /usr/bin/offlineimap -u Noninteractive.Quiet >/dev/null 2>&1
-    sleep 60
+    /usr/bin/offlineimap -u Noninteractive.Quiet
+    sleep 3m
 done
