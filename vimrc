@@ -1,9 +1,6 @@
 " dont emulate vi
 set nocompatible
 
-" set pwd to home
-cd $HOME
-
 " enable filetype plugin
 filetype plugin on
 filetype indent on
