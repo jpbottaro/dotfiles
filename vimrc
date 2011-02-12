@@ -14,6 +14,7 @@ let g:mapleader = ","
 
 " * Misc
 """"""""
+
 " undo levels
     set undolevels=100
 
@@ -63,6 +64,7 @@ let g:mapleader = ","
 
 " * Text Formatting
 """""""""""""""""""
+
 " use indents of 4 spaces, and have them copied down lines:
     set shiftwidth=4
     set tabstop=4
@@ -77,12 +79,13 @@ let g:mapleader = ","
 
 " * Backups
 """""""""""
+
 " no backups
     set nobackup
     set nowb
     set noswapfile
 
-" persistent undo
+" persistent undo (vim 7.3)
     try
         set undodir=~/.vim/vimundodir
         set undofile
@@ -91,6 +94,7 @@ let g:mapleader = ","
 
 " * Command Mode
 """"""""""""""""
+
 " bash like keys for the command line
     cnoremap <C-A> <Home>
     cnoremap <C-E> <End>
@@ -104,10 +108,6 @@ let g:mapleader = ","
     map <C-h> :wincmd h<cr>
     map <C-l> :wincmd l<cr>
 
-" use the arrows to do something useful
-    map <right> :bn<cr>
-    map <left> :bp<cr>
-
 " * Tabs
 """""""""""
 
@@ -115,11 +115,6 @@ let g:mapleader = ","
 	map <leader>cd :cd %:p:h<cr>
 
 " tab configuration
-	map <leader>tn :tabnew<cr>
-	map <leader>te :tabedit
-	map <leader>tc :tabclose<cr>
-	map <leader>tm :tabmove
-
 	map <C-T> :tabnew<cr>
 	map <C-W> :tabclose<cr>
 	map <C-Tab> :tabn<cr>
@@ -127,6 +122,7 @@ let g:mapleader = ","
 
 " * Editing Mappings
 """"""""""""""""""""
+
 " move a line using alt+[jk]
 	nmap <M-j> mz:m+<cr>`z
 	nmap <M-k> mz:m-2<cr>`z
@@ -143,9 +139,20 @@ let g:mapleader = ","
 
 	set guitablabel=%t
 
+" auto complete of (, {, [, ", '
+    inoremap "      ""<Left>
+    inoremap '      ''<Left>
+    inoremap {      {}<Left>
+    inoremap {<CR>  {<CR>}<Esc>O
+    inoremap {{     {
+    inoremap {}     {}
+    inoremap        (  ()<Left>
+    inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ?
+                                                            \   "\<Right>" : ")"
 
 " * Yankring
 """"""""""""
+
 " open YankRing Buffer 
 nnoremap <silent> <F4> :YRShow<cr>
 
@@ -155,6 +162,7 @@ let g:yankring_history_dir='$HOME/.vim/'
 
 " * Spell checking
 """"""""""""""""""
+
 " pressing ,ss will toggle and untoggle spell checking
 	map <leader>ss :setlocal spell!<cr>
 
@@ -164,22 +172,14 @@ let g:yankring_history_dir='$HOME/.vim/'
 	map <leader>sa zg
 	map <leader>s? z=
 
-" * TabList
-"""""""""""
-
-    nnoremap <silent> <F3> :Tlist<cr>
-
 " * .h
 """"""
 
     nnoremap <silent> <F2> :A<cr>
 
-" * Clojure
+
+" * TabList
 """""""""""
 
-    let vimclojure#HighlightBuiltins = 1
+    nnoremap <silent> <F3> :Tlist<cr>
 
-" * Omni Completion
-"""""""""""""""""""
-
-    set ofu=syntaxcomplete#Complete
