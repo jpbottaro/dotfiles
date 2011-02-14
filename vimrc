@@ -141,7 +141,9 @@ let g:mapleader = ","
 
 " auto complete of (, {, [, ", '
     inoremap "      ""<Left>
-    inoremap '      ''<Left>
+    inoremap ""     ""
+    inoremap [      []<Left>
+    inoremap []     []
     inoremap {      {}<Left>
     inoremap {<CR>  {<CR>}<Esc>O
     inoremap {{     {
