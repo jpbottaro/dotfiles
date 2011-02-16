@@ -185,3 +185,11 @@ let g:yankring_history_dir='$HOME/.vim/'
 
     nnoremap <silent> <F3> :Tlist<cr>
 
+" * Fugitive
+""""""""""""
+
+    map <leader>gb :Gblame<cr>
+    map <leader>gc :Gcommit<cr>
+    map <leader>gd :Gdiff<cr>
+    map <leader>gl :Glog<cr>
+    map <leader>gs :Gstatus<cr>
