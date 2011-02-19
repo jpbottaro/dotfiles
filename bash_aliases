@@ -3,12 +3,13 @@ alias my_complete='complete -o default -o nospace -F'
 # git aliases
 alias ga='git add'
 alias gb='git blame'
-alias gbr='git branch'
-alias gc='git commit'
+alias gbr='git branch -a'
+alias gc='git commit -v'
 alias gco='git checkout'
 alias gd='git diff'
 alias gl='git log'
 alias gp='git push'
+alias gpu='git pull'
 alias gs='git status'
 
 # git aliases completion
@@ -22,6 +23,7 @@ my_complete _git_checkout gco
 my_complete _git_diff     gd
 my_complete _git_log      gl
 my_complete _git_push     gp
+my_complete _git_pull     gpu
 my_complete _git_status   gs
 
 unalias my_complete
