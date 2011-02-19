@@ -1,7 +1,6 @@
 alias my_complete='complete -o default -o nospace -F'
 
 # git aliases
-alias g='git'
 alias ga='git add'
 alias gb='git blame'
 alias gbr='git branch'
