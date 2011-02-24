@@ -16,7 +16,6 @@ alias gs='git status'
 source /etc/bash_completion.d/git
 my_complete _git          g
 my_complete _git_add      ga
-#my_complete _git_blame    gb
 my_complete _git_branch   gbr
 my_complete _git_commit   gc
 my_complete _git_checkout gco
@@ -24,7 +23,6 @@ my_complete _git_diff     gd
 my_complete _git_log      gl
 my_complete _git_push     gp
 my_complete _git_pull     gpu
-my_complete _git_status   gs
 
 unalias my_complete
 
