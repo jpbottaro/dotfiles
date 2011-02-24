@@ -61,6 +61,9 @@ set mailcap_path=~/.mutt/mailcap:/usr/local/etc/mailcap:/etc/mailcap
 # sidebar patch
 source `FILE=$HOME/.mutt/sidebar; mutt -v | grep -Fq sidebar || FILE=/dev/null; echo $FILE`
 
+# alias
+bind pager R group-reply
+
 source ~/.mutt/auto-view
 source ~/.mutt/aliases
 source ~/.mutt/bindings
