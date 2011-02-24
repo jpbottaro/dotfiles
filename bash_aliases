@@ -28,4 +28,4 @@ my_complete _git_status   gs
 
 unalias my_complete
 
-alias up='su -c "apt-get update && apt-get upgrade"; alert'
+alias up='su -c "apt-get update && apt-get upgrade"; alert "update complete"'
