@@ -75,7 +75,7 @@ let g:mapleader = ","
     set wrap
 
 " max text width
-    set textwidth=80
+    set textwidth=79
 
 " * Backups
 """""""""""
