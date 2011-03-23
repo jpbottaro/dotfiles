@@ -5,5 +5,5 @@
 
 while true; do
     /usr/bin/offlineimap -u Noninteractive.Quiet
-    sleep 3m
+    sleep 1m
 done
