@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# dont forget to add manually nm and gnome-power-manager, with aptitude so that
+# you dont get unnecessary clutter
+
 su -c ' \
 apt-get update && \
 apt-get dist-upgrade && \
