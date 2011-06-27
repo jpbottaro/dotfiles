@@ -108,17 +108,21 @@ let g:mapleader = ","
     map <C-h> :wincmd h<cr>
     map <C-l> :wincmd l<cr>
 
-" * Tabs
+" * Buffers
 """""""""""
 
 " switch to the directory of current buffer
 	map <leader>cd :cd %:p:h<cr>
 
 " tab configuration
-	map <C-T> :tabnew<cr>
-	map <C-W> :tabclose<cr>
-	map <C-Tab> :tabn<cr>
-	map <C-S-Tab> :tabp<cr>
+	"map <C-T> :tabnew<cr>
+	"map <C-W> :tabclose<cr>
+	"map <C-Tab> :tabn<cr>
+	"map <C-S-Tab> :tabp<cr>
+	map <C-Tab> :bn<cr>
+	map <C-S-Tab> :bp<cr>
+	map <C-W> :bd<cr>
+	map <C-T> :bn<cr>
 
 " * Editing Mappings
 """"""""""""""""""""
@@ -156,10 +160,10 @@ let g:mapleader = ","
 """"""""""""
 
 " open YankRing Buffer 
-nnoremap <silent> <F4> :YRShow<cr>
+    nnoremap <silent> <F4> :YRShow<cr>
 
 " do not put the yankring_history_v2 file in Home, but in .vim directory
-let g:yankring_history_dir='$HOME/.vim/'
+    let g:yankring_history_dir='$HOME/.vim/'
 
 
 " * Spell checking
@@ -184,6 +188,11 @@ let g:yankring_history_dir='$HOME/.vim/'
 """""""""""
 
     nnoremap <silent> <F3> :Tlist<cr>
+
+" * MiniBufExpl
+"""""""""""""""
+    let g:miniBufExplUseSingleClick = 1
+    let g:miniBufExplMaxSize = 1
 
 " * Fugitive
 """"""""""""
