@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.LayoutHints
 import XMonad.Util.Run
 import XMonad.Util.Run(spawnPipe)
 import System.IO
@@ -31,7 +32,7 @@ myTerminal    = "rxvt-unicode"
 myModMask     = mod4Mask -- Super key
 myBorderWidth = 1
 myWorkspaces  = ["web", "term", "code"] ++ map show [4..9]
-myLayoutHook  = avoidStruts $ layoutHook defaultConfig
+myLayoutHook  = layoutHints $ avoidStruts $ layoutHook defaultConfig
 myManageHook  = manageHook defaultConfig <+> manageDocks
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
@@ -50,7 +51,7 @@ keysToRemove x =
 keysToAdd x =
     [ ((modMask x, xK_z), spawn "rxvt-unicode")
     , ((modMask x, xK_p), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
-    , ((modMask x, xK_v), spawn "gvim")
+    , ((modMask x, xK_v), spawn "gvim; xdotool key Super+n")
     , ((modMask x, xK_f), spawn "chromium")
     , ((modMask x, xK_d), spawn "rxvt-unicode -e mutt")
     ]

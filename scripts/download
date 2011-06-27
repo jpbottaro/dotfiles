@@ -9,5 +9,5 @@ apt-get dist-upgrade && \
 apt-get install xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser subversion preload sudo suckless-tools vim vim-gtk slim \
 git network-manager exuberant-ctags samba mutt msmtp alsa python-gnomekeyring \
-rxvt-unicode preload texlive evince ttf-inconsolata \
+rxvt-unicode preload texlive evince ttf-inconsolata xdotool \
 '
