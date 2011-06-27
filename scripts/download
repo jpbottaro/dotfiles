@@ -8,5 +8,5 @@ apt-get update && \
 apt-get dist-upgrade && \
 apt-get install xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser texlive subversion preload sudo suckless-tools vim vim-gtk \
-git network-manager exuberant-ctags samba mutt msmtp \
+git network-manager exuberant-ctags samba mutt msmtp alsa python-gnomekeyring \
 '
