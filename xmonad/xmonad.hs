@@ -16,6 +16,7 @@ main = do
         , borderWidth = myBorderWidth
         , layoutHook  = myLayoutHook
         , manageHook  = myManageHook
+        , workspaces  = myWorkspaces
         , keys        = myKeys
         , logHook     = dynamicLogWithPP xmobarPP
                             { ppOutput = hPutStrLn xmproc
@@ -24,9 +25,10 @@ main = do
 
         }
 
-myTerminal      = "xterm"
+myTerminal      = "rxvt"
 myModMask       = mod4Mask -- Super key
 myBorderWidth   = 1
+myWorkspaces    = ["web", "term", "code"] ++ map show [4..9]
 myLayoutHook    = avoidStruts $ layoutHook defaultConfig
 myManageHook    = manageHook defaultConfig <+> manageDocks
 
@@ -36,9 +38,9 @@ keysToRemove x =
     [ (modMask x, xK_c)
     ]
 keysToAdd x =
-    [ ((modMask x, xK_z), spawn "xterm")
+    [ ((modMask x, xK_z), spawn "rxvt")
     , ((modMask x, xK_p), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
     , ((modMask x, xK_v), spawn "gvim")
     , ((modMask x, xK_f), spawn "chromium")
-    , ((modMask x, xK_d), spawn "xterm -e mutt")
+    , ((modMask x, xK_d), spawn "rxvt -e mutt")
     ]
