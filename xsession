@@ -1,6 +1,7 @@
 #!/bin/bash
 
-xrdb -load .Xdefaults -merge .Xresources
+xrdb -merge .Xresources
+xrdb -load .Xdefaults
 xset r rate 200 30
 
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
