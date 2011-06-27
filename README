@@ -3,8 +3,12 @@ Just some configurations files I use.
 To install, simply go to scropts/ and issue ./install, and ./download to get
 all the required packages (debian only)
 
-Note to self
+Notes to self
 ------------
 
-To get remap keyboard, go to /etc/defaults/keyboard and fix it there
+- To get remap keyboard, go to /etc/defaults/keyboard and fix it there
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
+
+- add blacklist acer_wmi to /etc/modprobe.d/blacklist.conf
+
+- add /dev/sda { apm = 255 } to /etc/hdparm.conf
