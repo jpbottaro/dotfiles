@@ -1,5 +1,3 @@
-alias my_complete='complete -o default -o nospace -F'
-
 # git aliases
 alias ga='git add'
 alias gb='git blame'
@@ -15,6 +13,7 @@ alias gso='git show'
 
 # git aliases completion
 source /etc/bash_completion.d/git
+alias my_complete='complete -o default -o nospace -F'
 my_complete _git          g
 my_complete _git_add      ga
 my_complete _git_branch   gbr
@@ -25,7 +24,6 @@ my_complete _git_log      gl
 my_complete _git_push     gp
 my_complete _git_pull     gpu
 my_complete _git_show     gso
-
 unalias my_complete
 
 alias up='su -c "apt-get update && apt-get upgrade"'
