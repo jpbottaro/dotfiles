@@ -59,6 +59,7 @@ keysToRemove x =
     ]
 keysToAdd x =
     [ ((modMask x, xK_z), spawn "urxvt")
+    , ((modMask x, xK_x), spawn "urxvt -e \"su\"")
     , ((modMask x, xK_p), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
     , ((modMask x, xK_v), spawn "gvim; xdotool key Super+n")
     , ((modMask x, xK_f), spawn "chromium")
