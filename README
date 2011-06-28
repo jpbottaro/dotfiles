@@ -1,14 +1,15 @@
-Just some configurations files I use.
+Just some configurations files I use. This is mostly distro-independent, but
+things like the ./download script will only work in debian (only wheezy tested)
 
-To install, simply go to scropts/ and issue ./install, and ./download to get
+To install, simply go to scripts/ and issue ./install, and ./download to get
 all the required packages (debian only)
 
 Notes to self
-------------
+-------------
 
 - To get remap keyboard, go to /etc/defaults/keyboard and fix it there
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
 
-- add blacklist acer_wmi to /etc/modprobe.d/blacklist.conf
-
-- add /dev/sda { apm = 255 } to /etc/hdparm.conf
+- for acer timelinex 3820t:
+    - add blacklist acer_wmi to /etc/modprobe.d/blacklist.conf
+    - add /dev/sda { apm = 255 } to /etc/hdparm.conf
