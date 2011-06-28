@@ -4,6 +4,6 @@
 # gnome-keyring. Add this to the users startup scripts/applications
 
 while true; do
-    /usr/bin/offlineimap -u Noninteractive.Quiet
+    /usr/bin/offlineimap -u quiet
     sleep 1m
 done
