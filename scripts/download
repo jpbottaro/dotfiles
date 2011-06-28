@@ -8,6 +8,6 @@ apt-get update && \
 apt-get dist-upgrade && \
 apt-get install xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser subversion preload sudo suckless-tools vim vim-gtk \
-git exuberant-ctags samba mutt msmtp alsa python-gnomekeyring \
-rxvt-unicode preload texlive evince ttf-inconsolata xdotool \
+git exuberant-ctags samba mutt msmtp alsa python-gnomekeyring unzip \
+rxvt-unicode preload texlive evince ttf-inconsolata xdotool mplayer \
 '
