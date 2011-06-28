@@ -11,6 +11,8 @@ xsetroot -cursor_name left_ptr -solid midnightblue
 
 xscreensaver -no-splash &
 
+offlineimap &
+
 chromium &
 
 xmonad
