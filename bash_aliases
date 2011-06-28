@@ -10,6 +10,7 @@ alias gp='git push'
 alias gpu='git pull'
 alias gs='git status'
 alias gso='git show'
+alias gm='git merge'
 
 # git aliases completion
 source /etc/bash_completion.d/git
@@ -24,6 +25,7 @@ my_complete _git_log      gl
 my_complete _git_push     gp
 my_complete _git_pull     gpu
 my_complete _git_show     gso
+my_complete _git_merge    gm
 unalias my_complete
 
 alias up='su -c "apt-get update && apt-get upgrade"'
