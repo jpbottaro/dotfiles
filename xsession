@@ -13,6 +13,8 @@ xscreensaver -no-splash &
 
 offlineimap &
 
+offlineimap &
+
 chromium &
 
 xmonad
