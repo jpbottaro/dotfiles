@@ -11,14 +11,6 @@ xsetroot -cursor_name left_ptr -solid midnightblue
 
 xscreensaver -no-splash &
 
-if [ -x /usr/bin/nm-applet ] ; then
-	nm-applet --sm-diable &
-fi
-
-if [ -x /usr/bin/gnome-power-manager ] ; then
-	gnome-power-manager &
-fi
-
 chromium &
 
 xmonad
