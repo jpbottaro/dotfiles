@@ -40,7 +40,7 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 WHITE="\[\033[0;29m\]"
 
-PS1="$RED\$(date +%H:%M) \w$GREEN\$(__git_ps1) $WHITE\$ "
+PS1="$RED\u@\h $YELLOW\w$GREEN\$(__git_ps1) $WHITE\$ "
 
 #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
