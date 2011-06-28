@@ -35,7 +35,14 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+WHITE="\[\033[0;29m\]"
+
+PS1="$RED\$(date +%H:%M) \w$GREEN\$(__git_ps1) $WHITE\$ "
+
+#PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
