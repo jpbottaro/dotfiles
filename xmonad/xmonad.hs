@@ -26,7 +26,7 @@ main = do
         , logHook         = myLogHook xmproc
         }
 
-myTerminal        = "urxvt"
+myTerminal        = "st"
 myModMask         = mod4Mask
 myBorderWidth     = 1
 myWorkspaces      = ["web", "term", "code"] ++ map show [4..9]
@@ -58,10 +58,13 @@ keysToRemove x =
     [ (modMask x, xK_c)
     ]
 keysToAdd x =
-    [ ((modMask x, xK_z), spawn "urxvt")
-    , ((modMask x, xK_x), spawn "urxvt -e \"su\"")
+    [ ((modMask x, xK_z), spawn "st")
+    , ((modMask x, xK_x), spawn "st -e su")
     , ((modMask x, xK_p), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
     , ((modMask x, xK_v), spawn "gvim; xdotool key Super+n")
     , ((modMask x, xK_f), spawn "chromium")
-    , ((modMask x, xK_d), spawn "urxvt -e mutt")
+    , ((modMask x, xK_d), spawn "st -e mutt")
+    , ((0 , 0x1008ff12), spawn "amixer -q sset Master toggle"   ) --XF86AudioToggleVolume
+    , ((0 , 0x1008ff11), spawn "amixer -q sset Master 5- unmute") --XF86AudioLowerVolume
+    , ((0 , 0x1008ff13), spawn "amixer -q sset Master 5+ unmute") --XF86AudioRaiseVolume
     ]
