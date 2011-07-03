@@ -11,5 +11,7 @@ Notes to self
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
 
 - for acer timelinex 3820t:
+    - add GRUB_CMDLINE_LINUX="acpi_osi=Linux" in /etc/defaults/grup, and
+      update-grup
     - add blacklist acer_wmi to /etc/modprobe.d/blacklist.conf
     - add /dev/sda { apm = 255 } to /etc/hdparm.conf
