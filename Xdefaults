@@ -1,5 +1,5 @@
 urxvt*transparent:true
-urxvt*shading:40
+urxvt*shading:8
 urxvt*background:Black
 urxvt*foreground:White
 urxvt*scrollBar:false
@@ -8,3 +8,13 @@ urxvt*transpscrollbar:true
 urxvt*saveLines:32767
 urxvt*font:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
 urxvt*boldFont:*-*-fixed-bold-r-normal--*-*-110-*-*-*-*-iso8859-1
+xterm*transparent:true
+xterm*shading:8
+xterm*background:Black
+xterm*foreground:White
+xterm*scrollBar:false
+xterm*scrollBar_right:true
+xterm*transpscrollbar:true
+xterm*saveLines:32767
+xterm*font:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
+xterm*boldFont:*-*-fixed-bold-r-normal--*-*-110-*-*-*-*-iso8859-1
