@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# search backwards (in the parents) for the tags file and write tags of file
+# arg1: path where the search for tags begins
+# arg2: file to be added/updated to the tags
+
+pushd . >/dev/null
+cd "$1"
+dir=$(pwd -P 2>/dev/null || command pwd)
+popd >/dev/null
+while [ ! -e "$dir/tags" ]; do
+    dir=${dir%/*}
+    if [ "$dir" = "" ]; then exit -1; fi
+done
+ctags -a --extra=+q -f $dir/tags $2

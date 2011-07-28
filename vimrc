@@ -123,7 +123,6 @@ let g:mapleader = ","
 	map <C-Tab> :bn<cr>
 	map <C-S-Tab> :bp<cr>
 	map <C-W> :bd<cr>
-	map <C-T> :bn<cr>
 
 " * Editing Mappings
 """"""""""""""""""""
@@ -155,6 +154,14 @@ let g:mapleader = ","
 	map <leader>sp [s
 	map <leader>sa zg
 	map <leader>s? z=
+
+" * Tags
+""""""""""""""""""
+
+    set tags=./tags;/
+    " only add tags to the master tag file of the proyect (the script looks for
+    " it parent by parent)
+    au BufWrite *.py,*.rb,*.cpp,*.c,*.h silent !ctagsadd %:p:h %:p &
 
 " * .h
 """"""

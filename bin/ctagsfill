@@ -1,0 +1,4 @@
+#!/bin/bash
+
+dir=$(pwd -P 2>/dev/null || command pwd)
+ctags -Ra --extra=+q $dir
