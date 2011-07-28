@@ -116,9 +116,6 @@ let g:mapleader = ","
 " * Buffers
 """""""""""
 
-" switch to the directory of current buffer
-	map <leader>cd :cd %:p:h<cr>
-
 " buf configuration
 	map <C-Tab> :bn<cr>
 	map <C-S-Tab> :bp<cr>
@@ -196,6 +193,6 @@ let g:mapleader = ","
 
 " * NERD_tree
 """""""""""""
-
+    let g:NERDTreeShowBookmarks = 1
     imap <C-o> <ESC>:NERDTreeToggle<CR>
     map <C-o> :NERDTreeToggle<CR>
