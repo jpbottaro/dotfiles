@@ -103,10 +103,15 @@ let g:mapleader = ","
     cnoremap <C-N> <Down>
 
 " smart way yo move between windows
-    map <C-j> :wincmd j<cr>
-    map <C-k> :wincmd k<cr>
-    map <C-h> :wincmd h<cr>
-    map <C-l> :wincmd l<cr>
+    map <C-j> :wincmd w<cr>
+    imap <C-j> :wincmd w<cr>
+    map <C-k> :wincmd W<cr>
+    imap <C-k> :wincmd W<cr>
+    map <C-h> :wincmd <<cr>
+    imap <C-h> :wincmd <<cr>
+    map <C-l> :wincmd ><cr>
+    imap <C-l> :wincmd ><cr>
+
 
 " * Buffers
 """""""""""
@@ -114,11 +119,7 @@ let g:mapleader = ","
 " switch to the directory of current buffer
 	map <leader>cd :cd %:p:h<cr>
 
-" tab configuration
-	"map <C-T> :tabnew<cr>
-	"map <C-W> :tabclose<cr>
-	"map <C-Tab> :tabn<cr>
-	"map <C-S-Tab> :tabp<cr>
+" buf configuration
 	map <C-Tab> :bn<cr>
 	map <C-S-Tab> :bp<cr>
 	map <C-W> :bd<cr>
@@ -143,29 +144,6 @@ let g:mapleader = ","
 
 	set guitablabel=%t
 
-" auto complete of (, {, [, ", '
-    inoremap "      ""<Left>
-    inoremap ""     ""
-    inoremap [      []<Left>
-    inoremap []     []
-    inoremap {      {}<Left>
-    inoremap {<CR>  {<CR>}<Esc>O
-    inoremap {{     {
-    inoremap {}     {}
-    inoremap        (  ()<Left>
-    inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ?
-                                                            \   "\<Right>" : ")"
-
-" * Yankring
-""""""""""""
-
-" open YankRing Buffer 
-    nnoremap <silent> <F4> :YRShow<cr>
-
-" do not put the yankring_history_v2 file in Home, but in .vim directory
-    let g:yankring_history_dir='$HOME/.vim/'
-
-
 " * Spell checking
 """"""""""""""""""
 
@@ -189,9 +167,15 @@ let g:mapleader = ","
 
     nnoremap <silent> <F3> :Tlist<cr>
 
+" * Yankring
+""""""""""""
+
+    nnoremap <silent> <F4> :YRShow<cr>
+    let g:yankring_history_dir='$HOME/.vim/'
+
 " * MiniBufExpl
 """""""""""""""
-    let g:miniBufExplUseSingleClick = 1
+
     let g:miniBufExplMaxSize = 1
 
 " * Fugitive
@@ -202,3 +186,9 @@ let g:mapleader = ","
     map <leader>gd :Gdiff<cr>
     map <leader>gl :Glog<cr>
     map <leader>gs :Gstatus<cr>
+
+" * NERD_tree
+"""""""""""""
+
+    imap <C-o> <ESC>:NERDTreeToggle<CR>
+    map <C-o> :NERDTreeToggle<CR>

@@ -3,6 +3,11 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export JRE_HOME=/usr/lib/jvm/java-6-sun
+export CLASSPATH=.:$JAVA_HOME
+export PATH=$PATH:$JAVA_HOME/bin
+
 # editor
 EDITOR=vim
 

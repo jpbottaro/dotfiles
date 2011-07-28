@@ -1,6 +1,7 @@
-" remove bars (scroll r, menu m, icon T)
+" remove bars (scroll r, menu m, icon T, scrollbar L)
     set guioptions-=mr
     set guioptions-=T
+    set guioptions-=L
 
 " set columns and lines so they fit the screen
     set columns=84
