@@ -192,3 +192,10 @@ let g:mapleader = ","
 
     imap <C-o> <ESC>:NERDTreeToggle<CR>
     map <C-o> :NERDTreeToggle<CR>
+
+" * easytags
+""""""""""""
+
+    let g:easytags_file = '~/.vim/tags'
+    let g:easytags_auto_highlight = 0
+
