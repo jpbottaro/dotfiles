@@ -159,6 +159,7 @@ let g:mapleader = ","
     " only add tags to the master tag file of the proyect (the script looks for
     " it parent by parent)
     au BufWrite *.py,*.rb,*.cpp,*.c,*.h silent !ctagsadd %:p:h %:p &
+	map <C-]> g<C-]>
 
 " * .h
 """"""
