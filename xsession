@@ -15,4 +15,4 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true \
 
 chromium &
 
-exec ck-launch-session xmonad
+exec ck-launch-session dbus-launch --exit-with-session xmonad
