@@ -195,5 +195,6 @@ let g:mapleader = ","
 " * NERD_tree
 """""""""""""
     let g:NERDTreeShowBookmarks = 1
+    let NERDTreeIgnore=['\.pyc']
     imap <C-o> <ESC>:NERDTreeToggle<CR>
     map <C-o> :NERDTreeToggle<CR>
