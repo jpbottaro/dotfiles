@@ -24,8 +24,8 @@ let g:mapleader = ","
 " * User Interface
 """"""""""""""""""
 
-" show line and column numbers
-    set ruler
+" show no line numbers
+    "set nu
 
 " change buffer - without saving
     set hid
@@ -35,7 +35,6 @@ let g:mapleader = ","
 
 " color scheme
     colorscheme desert
-    "colorscheme molokai
 
 " have command-line completion <Tab> (for filenames, help topics, option names)
 " first list the available options and complete the longest common part, then
@@ -43,8 +42,8 @@ let g:mapleader = ","
     set wildmode=list:longest,full
 
 " display the current mode and partially-typed commands in the status line:
-    set showmode
-    set showcmd
+    set laststatus=2 
+    set statusline=%<%f\ %h%m%r\ %#warningmsg#%{SyntasticStatuslineFlag()}%*\ %-14.(%l,%c%V%)\ %P
 
 " ignore case when searching
     set ignorecase
@@ -52,7 +51,7 @@ let g:mapleader = ","
 " highlight as you type you search phrase
     set incsearch
 
-" shoe matching bracets when text indicator is over them
+" show matching bracets when text indicator is over them
     set showmatch
     set mat=2
 
@@ -176,7 +175,7 @@ let g:mapleader = ","
 """"""""""""
 
     nnoremap <silent> <F4> :YRShow<cr>
-    let g:yankring_history_dir='$HOME/.vim/'
+    let g:yankring_history_dir ='$HOME/.vim/'
 
 " * MiniBufExpl
 """""""""""""""
@@ -195,6 +194,12 @@ let g:mapleader = ","
 " * NERD_tree
 """""""""""""
     let g:NERDTreeShowBookmarks = 1
-    let NERDTreeIgnore=['\.pyc']
-    imap <C-o> <ESC>:NERDTreeToggle<CR>
-    map <C-o> :NERDTreeToggle<CR>
+    let NERDTreeIgnore = ['\.pyc']
+    imap <C-o> <ESC>:NERDTreeToggle<cr>
+    map <C-o> :NERDTreeToggle<cr>
+
+" * Syntactic
+"""""""""""""
+    "let g:syntastic_enable_signs = 1
+    let g:syntastic_auto_loc_list = 1
+    nnoremap <silent> <F5> :Errors<cr>
