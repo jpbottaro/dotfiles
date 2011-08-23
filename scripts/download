@@ -10,5 +10,5 @@ apt-get install xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser subversion preload sudo suckless-tools vim vim-gtk unzip \
 rxvt-unicode-lite preload texlive evince ttf-inconsolata xdotool vlc urlview \
 git exuberant-ctags samba mutt msmtp alsa unzip \
-lxappearance feh \
+lxappearance feh pyflakes \
 '
