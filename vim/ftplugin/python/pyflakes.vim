@@ -44,8 +44,7 @@ if sys.version_info[:2] < (2, 5):
 
 # get the directory this script is in: the pyflakes python module should be installed there.
 scriptdir = os.path.join(os.path.dirname(vim.eval('expand("<sfile>")')), 'pyflakes')
-if scriptdir not in sys.path:
-    sys.path.insert(0, scriptdir)
+sys.path.insert(0, scriptdir)
 
 import ast
 from pyflakes import checker, messages
@@ -161,11 +160,10 @@ endif
 " Hook common text manipulation commands to update PyFlakes
 "   TODO: is there a more general "text op" autocommand we could register
 "   for here?
-nnoremap <buffer><silent> dd dd:PyflakesUpdate<CR>
-nnoremap <buffer><silent> dw dw:PyflakesUpdate<CR>
-nnoremap <buffer><silent> u u:PyflakesUpdate<CR>
-nnoremap <buffer><silent> <C-R> <C-R>:PyflakesUpdate<CR>
-vnoremap <buffer><silent> d d:PyflakesUpdate<CR>
+noremap <buffer><silent> dd dd:PyflakesUpdate<CR>
+noremap <buffer><silent> dw dw:PyflakesUpdate<CR>
+noremap <buffer><silent> u u:PyflakesUpdate<CR>
+noremap <buffer><silent> <C-R> <C-R>:PyflakesUpdate<CR>
 
 " WideMsg() prints [long] message up to (&columns-1) length
 " guaranteed without "Press Enter" prompt.
