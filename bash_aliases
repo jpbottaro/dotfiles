@@ -29,3 +29,4 @@ my_complete _git_merge    gm
 unalias my_complete
 
 alias up='su -c "apt-get update && apt-get upgrade"'
+alias shut='su -c "shutdown -h now"'
