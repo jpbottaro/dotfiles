@@ -10,6 +10,6 @@ apt-get install --no-install-recommends \
 libghc-xmonad-contrib-dev ghc xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser subversion preload sudo suckless-tools vim vim-gtk unzip \
 rxvt-unicode-lite preload texlive latex-beamer evince ttf-inconsolata xdotool vlc urlview \
-git exuberant-ctags samba mutt msmtp alsa unzip shh \
-lxappearance feh pyflakes tmux rtorrent xscreensaver console-kit \
+git exuberant-ctags samba mutt msmtp alsa alsa-util unzip shh \
+lxappearance feh pyflakes tmux rtorrent xscreensaver console-kit bash-completion \
 '
