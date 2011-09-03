@@ -7,7 +7,7 @@ su -c ' \
 apt-get update && \
 apt-get dist-upgrade && \
 apt-get install --no-install-recommends \
-xmonad xorg xmobar trayer build-essential offlineimap \
+libghc-xmonad-contrib-dev ghc xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser subversion preload sudo suckless-tools vim vim-gtk unzip \
 rxvt-unicode-lite preload texlive latex-beamer evince ttf-inconsolata xdotool vlc urlview \
 git exuberant-ctags samba mutt msmtp alsa unzip \
