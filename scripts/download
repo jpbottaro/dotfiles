@@ -6,9 +6,10 @@
 su -c ' \
 apt-get update && \
 apt-get dist-upgrade && \
-apt-get install xmonad xorg xmobar trayer build-essential offlineimap \
+apt-get install --no-install-recommends \
+xmonad xorg xmobar trayer build-essential offlineimap \
 chromium-browser subversion preload sudo suckless-tools vim vim-gtk unzip \
-rxvt-unicode-lite preload texlive evince ttf-inconsolata xdotool vlc urlview \
+rxvt-unicode-lite preload texlive latex-beamer evince ttf-inconsolata xdotool vlc urlview \
 git exuberant-ctags samba mutt msmtp alsa unzip \
-lxappearance feh pyflakes tmux rtorrent \
+lxappearance feh pyflakes tmux rtorrent xscreensaver console-kit \
 '
