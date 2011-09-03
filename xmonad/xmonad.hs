@@ -64,6 +64,7 @@ keysToAdd x =
     , ((modMask x, xK_v), spawn "gvim; xdotool key Super+n")
     , ((modMask x, xK_f), spawn "chromium")
     , ((modMask x, xK_d), spawn "urxvt -e mutt")
+    , ((modMask x, xK_s), spawn "urxvt -e tmux attach")
     , ((modMask x, xK_b), spawn "randombg")
     , ((0 , 0x1008ff12), spawn "amixer -q sset Master toggle"   ) --XF86AudioToggleVolume
     , ((0 , 0x1008ff11), spawn "amixer -q sset Master 5- unmute") --XF86AudioLowerVolume
