@@ -3,16 +3,17 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export JRE_HOME=/usr/lib/jvm/java-6-sun
-export CLASSPATH=.:$JAVA_HOME
-export PATH=$PATH:$JAVA_HOME/bin
-
 # editor
 EDITOR=vim
 
 # path
-PATH=~/bin:$PATH
+PATH=~/bin:/usr/lib/ccache:$PATH
+
+# remotes for distcc
+DISTCC_HOSTS="localhost jp-desktop"
+
+# run distcc and ccache together
+CCACHE_PREFIX="distcc"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
