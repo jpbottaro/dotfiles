@@ -12,4 +12,5 @@ chromium-browser subversion preload sudo suckless-tools vim vim-gtk unzip \
 rxvt-unicode-lite preload texlive latex-beamer evince ttf-inconsolata xdotool vlc urlview \
 git exuberant-ctags samba mutt msmtp alsa alsa-util unzip shh \
 lxappearance feh pyflakes tmux rtorrent xscreensaver console-kit bash-completion \
+ccache distcc \
 '
