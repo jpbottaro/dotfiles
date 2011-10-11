@@ -28,7 +28,7 @@ my_complete _git_show     gso
 my_complete _git_merge    gm
 unalias my_complete
 
-alias up='su -c "apt-get update && apt-get upgrade"'
+alias up='su -c "apt-get update && apt-get dist-upgrade -y"'
 alias shut='su -c "shutdown -h now"'
 alias reb='su -c "shutdown -r now"'
 alias att='tmux attach'
