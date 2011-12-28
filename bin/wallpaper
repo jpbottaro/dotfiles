@@ -1,6 +1,0 @@
-#!/bin/bash
-
-while true; do
-    randombg
-    sleep 15m
-done

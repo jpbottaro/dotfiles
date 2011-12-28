@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# dont forget to add manually nm and gnome-power-manager, with aptitude so that
-# you dont get unnecessary clutter
-
 su -c ' \
 apt-get update && \
 apt-get dist-upgrade && \
 apt-get install --no-install-recommends \
-libghc-xmonad-contrib-dev ghc xmonad xorg xmobar trayer build-essential offlineimap \
-chromium-browser subversion preload sudo suckless-tools vim vim-gtk unzip \
-rxvt-unicode-lite preload texlive latex-beamer evince ttf-inconsolata xdotool vlc urlview \
-git exuberant-ctags samba mutt msmtp alsa alsa-util unzip shh \
-lxappearance feh pyflakes tmux rtorrent xscreensaver console-kit bash-completion \
-ccache distcc gdm3 \
+ttf-inconsolata xdotool xorg build-essential offlineimap \
+chromium-browser subversion sudo suckless-tools vim vim-gnome unzip \
+texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
+urlview git exuberant-ctags mutt msmtp unzip ssh \
+pyflakes tmux rtorrent bash-completion \
+ccache distcc gnome \
 '
