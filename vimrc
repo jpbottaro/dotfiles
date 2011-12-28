@@ -1,6 +1,25 @@
 " dont emulate vi
 set nocompatible
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" original repos on github
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-surround'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'msanders/snipmate.vim'
+"Bundle 'dickeytk/status.vim'
+"Bundle 'wincent/Command-T'
+"Bundle 'chrismetcalf/vim-yankring'
+"Bundle 'fholgado/minibufexpl.vim'
+
+
 " enable filetype plugin
 filetype plugin on
 filetype indent on
@@ -40,10 +59,6 @@ let g:mapleader = ","
 " first list the available options and complete the longest common part, then
 " have further <Tab>s cycle through the possibilities:
     set wildmode=list:longest,full
-
-" display the current mode and partially-typed commands in the status line:
-    set laststatus=2 
-    set statusline=%<%f\ %h%m%r\ %#warningmsg#%{SyntasticStatuslineFlag()}%*\ %-14.(%l,%c%V%)\ %P
 
 " ignore case when searching
     set ignorecase
@@ -159,17 +174,6 @@ let g:mapleader = ","
     " it parent by parent)
     au BufWrite *.py,*.rb,*.cpp,*.c,*.h silent !ctagsadd %:p:h %:p &
 	map <C-]> g<C-]>
-
-" * .h
-""""""
-
-    nnoremap <silent> <F2> :A<cr>
-
-
-" * TabList
-"""""""""""
-
-    nnoremap <silent> <F3> :Tlist<cr>
 
 " * Yankring
 """"""""""""
