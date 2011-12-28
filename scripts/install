@@ -13,6 +13,9 @@ for name in *; do
             if [ -e $target ]; then
                 mv "$target" "$target".bk
             fi
+            if [ -h $target ]; then
+                rm "$target"
+            fi
             ln -s "$PWD/$name" "$target"
         fi
 done
