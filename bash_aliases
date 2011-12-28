@@ -23,6 +23,8 @@ __git_shortcut () {
 __git_shortcut  ga    add 
 __git_shortcut  gs    status 
 __git_shortcut  gb    branch 
+__git_shortcut  gp    push 
+__git_shortcut  gpu   pull 
 __git_shortcut  gba   branch -a 
 __git_shortcut  gco   checkout 
 __git_shortcut  gc   commit -v 
