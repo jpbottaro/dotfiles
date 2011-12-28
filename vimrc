@@ -9,15 +9,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-surround'
-"Bundle 'scrooloose/nerdtree'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'msanders/snipmate.vim'
-"Bundle 'dickeytk/status.vim'
-"Bundle 'wincent/Command-T'
-"Bundle 'chrismetcalf/vim-yankring'
-"Bundle 'fholgado/minibufexpl.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'msanders/snipmate.vim'
+Bundle 'dickeytk/status.vim'
+Bundle 'wincent/Command-T'
+Bundle 'chrismetcalf/vim-yankring'
+Bundle 'fholgado/minibufexpl.vim'
 
 
 " enable filetype plugin
