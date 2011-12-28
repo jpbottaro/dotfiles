@@ -1,32 +1,39 @@
-# git aliases
-alias ga='git add'
-alias gb='git blame'
-alias gbr='git branch -a'
-alias gc='git commit -v'
-alias gco='git checkout'
-alias gd='git diff'
-alias gl='git log'
-alias gp='git push'
-alias gpu='git pull'
-alias gs='git status'
-alias gso='git show'
-alias gm='git merge'
-
 # git aliases completion
-source /etc/bash_completion.d/git
-alias my_complete='complete -o default -o nospace -F'
-my_complete _git          g
-my_complete _git_add      ga
-my_complete _git_branch   gbr
-my_complete _git_commit   gc
-my_complete _git_checkout gco
-my_complete _git_diff     gd
-my_complete _git_log      gl
-my_complete _git_push     gp
-my_complete _git_pull     gpu
-my_complete _git_show     gso
-my_complete _git_merge    gm
-unalias my_complete
+__define_git_completion () { 
+eval " 
+    _git_$2_shortcut () { 
+        COMP_LINE=\"git $2\${COMP_LINE#$1}\" 
+        let COMP_POINT+=$((4+${#2}-${#1})) 
+        COMP_WORDS=(git $2 \"\${COMP_WORDS[@]:1}\") 
+        let COMP_CWORD+=1 
+
+        local cur words cword prev 
+        _get_comp_words_by_ref -n =: cur words cword prev 
+        _git_$2 
+    } 
+" 
+} 
+
+__git_shortcut () { 
+    type _git_$2_shortcut &>/dev/null || __define_git_completion $1 $2 
+    alias $1="git $2 $3" 
+    complete -o default -o nospace -F _git_$2_shortcut $1 
+} 
+
+__git_shortcut  ga    add 
+__git_shortcut  gs    status 
+__git_shortcut  gb    branch 
+__git_shortcut  gba   branch -a 
+__git_shortcut  gco   checkout 
+__git_shortcut  gc   commit -v 
+__git_shortcut  gca  commit '-a -v' 
+__git_shortcut  gd    diff 
+__git_shortcut  gdc   diff --cached 
+__git_shortcut  gds   diff --stat 
+__git_shortcut  gf    fetch 
+__git_shortcut  gl    log 
+__git_shortcut  glp   log -p 
+__git_shortcut  gls   log --stat 
 
 alias up='su -c "apt-get update && apt-get dist-upgrade -y"'
 alias shut='su -c "shutdown -h now"'
