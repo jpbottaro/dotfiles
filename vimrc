@@ -11,14 +11,15 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
 Bundle 'msanders/snipmate.vim'
 Bundle 'dickeytk/status.vim'
-Bundle 'wincent/Command-T'
+Bundle 'ervandew/supertab'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'fholgado/minibufexpl.vim'
-
+Bundle 'bcnice20/go-vim'
+Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'anzaika/go.vim'
 
 " enable filetype plugin
 filetype plugin on
@@ -44,7 +45,7 @@ let g:mapleader = ","
 """"""""""""""""""
 
 " show no line numbers
-    "set nu
+    set nu
 
 " change buffer - without saving
     set hid
@@ -86,7 +87,6 @@ let g:mapleader = ","
     set autoindent
     set smartindent
     set smarttab
-    set wrap
 
 " max text width
     set textwidth=79
@@ -197,6 +197,7 @@ let g:mapleader = ","
 
 " * NERD_tree
 """""""""""""
+
     let g:NERDTreeShowBookmarks = 1
     let NERDTreeIgnore = ['\.pyc']
     imap <C-o> <ESC>:NERDTreeToggle<cr>
@@ -204,6 +205,32 @@ let g:mapleader = ","
 
 " * Syntactic
 """""""""""""
+
     "let g:syntastic_enable_signs = 1
-    let g:syntastic_auto_loc_list = 1
-    nnoremap <silent> <F5> :Errors<cr>
+    "let g:syntastic_auto_loc_list = 1
+    "nnoremap <silent> <F5> :Errors<cr>
+
+" * Go-vim
+""""""""""
+
+    set ofu=syntaxcomplete#Complete
+    let Omnifunc_GlobalScopeSearch   = 1
+    let Omnifunc_DisplayMode         = 1
+    let Omnifunc_ShowPrototypeInAbbr = 1 "show prototype in pop-up
+    let Omnifunc_ShowAccess          = 1 "show access in pop-up
+    let Omnifunc_SelectFirstItem     = 1 "select first item in pop-up
+    set completeopt=menuone,menu,longest
+
+" * Status Line
+"""""""""""""""
+
+    "Fugitive
+    let g:statusline_fugitive = 1
+    "RVM
+    let g:statusline_rvm = 0
+    "Syntastic
+    let g:statusline_syntastic = 0
+    "Turn statusline off
+    let g:statusline_enabled = 1
+    "Turn on full paths
+    let g:statusline_fullpath = 1 
