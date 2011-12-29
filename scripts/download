@@ -7,7 +7,7 @@ apt-get install --no-install-recommends \
 ttf-inconsolata xdotool xorg build-essential offlineimap \
 chromium-browser subversion sudo suckless-tools vim vim-gnome unzip \
 texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
-urlview git exuberant-ctags mutt msmtp unzip ssh \
+urlview git exuberant-ctags mutt msmtp msmtp-gnome unzip ssh \
 pyflakes tmux rtorrent bash-completion \
-ccache distcc gnome \
+gnome gnome-tweak-tool \
 '
