@@ -7,13 +7,7 @@
 EDITOR=vim
 
 # path
-PATH=~/bin:/usr/lib/ccache:$PATH
-
-# remotes for distcc
-DISTCC_HOSTS="localhost jp-desktop"
-
-# run distcc and ccache together
-CCACHE_PREFIX="distcc"
+PATH=~/dev/go/bin:~/bin:$PATH
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
