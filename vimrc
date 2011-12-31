@@ -13,13 +13,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'msanders/snipmate.vim'
 Bundle 'dickeytk/status.vim'
-Bundle 'ervandew/supertab'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'bcnice20/go-vim'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'anzaika/go.vim'
+Bundle 'kevinw/pyflakes-vim'
+Bundle 'nvie/vim-pep8'
 
 " enable filetype plugin
 filetype plugin on
@@ -210,15 +209,15 @@ let g:mapleader = ","
     "let g:syntastic_auto_loc_list = 1
     "nnoremap <silent> <F5> :Errors<cr>
 
-" * Go-vim
-""""""""""
+" * OmniComplete
+""""""""""""""""
 
     set ofu=syntaxcomplete#Complete
     let Omnifunc_GlobalScopeSearch   = 1
     let Omnifunc_DisplayMode         = 1
     let Omnifunc_ShowPrototypeInAbbr = 1 "show prototype in pop-up
     let Omnifunc_ShowAccess          = 1 "show access in pop-up
-    let Omnifunc_SelectFirstItem     = 1 "select first item in pop-up
+    let Omnifunc_SelectFirstItem     = 0 "select first item in pop-up
     set completeopt=menuone,menu,longest
 
 " * Status Line
