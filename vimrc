@@ -55,9 +55,7 @@ let g:mapleader = ","
 " color scheme
     colorscheme desert
 
-" have command-line completion <Tab> (for filenames, help topics, option names)
-" first list the available options and complete the longest common part, then
-" have further <Tab>s cycle through the possibilities:
+" have command-line completion (for filenames, help topics, option names)
     set wildmode=list:longest,full
 
 " ignore case when searching
@@ -223,13 +221,20 @@ let g:mapleader = ","
 " * Status Line
 """""""""""""""
 
-    "Fugitive
     let g:statusline_fugitive = 1
-    "RVM
-    let g:statusline_rvm = 0
-    "Syntastic
-    let g:statusline_syntastic = 0
-    "Turn statusline off
-    let g:statusline_enabled = 1
-    "Turn on full paths
     let g:statusline_fullpath = 1
+    let g:statusline_enabled = 1
+    let g:statusline_order = [
+        \ 'Filename',
+        \ 'CheckUnix',
+        \ 'Encoding',
+        \ 'Modified',
+        \ 'Fugitive',
+        \ 'TabWarning',
+        \ 'TrailingSpaceWarning',
+        \ 'Paste',
+        \ 'ReadOnly',
+        \ 'RightSeperator',
+        \ 'CursorColumn',
+        \ 'LineAndTotal',
+        \ 'FilePercent']
