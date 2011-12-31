@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " original repos on github
@@ -131,40 +131,40 @@ let g:mapleader = ","
 """""""""""
 
 " buf configuration
-	map <C-Tab> :bn<cr>
-	map <C-S-Tab> :bp<cr>
-	map <C-W> :bd<cr>
+    map <C-Tab> :bn<cr>
+    map <C-S-Tab> :bp<cr>
+    map <C-W> :bd<cr>
 
 " * Editing Mappings
 """"""""""""""""""""
 
 " move a line using alt+[jk]
-	nmap <M-j> mz:m+<cr>`z
-	nmap <M-k> mz:m-2<cr>`z
-	vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-	vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+    nmap <M-j> mz:m+<cr>`z
+    nmap <M-k> mz:m-2<cr>`z
+    vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+    vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " delete trailing white space, useful for python
-	func! DeleteTrailingWS()
-	    exe "normal mz"
-	    %s/\s\+$//ge
-	    exe "normal `z"
-	endfunc
-	autocmd BufWrite *.py :call DeleteTrailingWS()
+    func! DeleteTrailingWS()
+        exe "normal mz"
+        %s/\s\+$//ge
+        exe "normal `z"
+    endfunc
+    autocmd BufWrite *.py :call DeleteTrailingWS()
 
-	set guitablabel=%t
+    set guitablabel=%t
 
 " * Spell checking
 """"""""""""""""""
 
 " pressing ,ss will toggle and untoggle spell checking
-	map <leader>ss :setlocal spell!<cr>
+    map <leader>ss :setlocal spell!<cr>
 
 " shortcuts using <leader>
-	map <leader>sn ]s
-	map <leader>sp [s
-	map <leader>sa zg
-	map <leader>s? z=
+    map <leader>sn ]s
+    map <leader>sp [s
+    map <leader>sa zg
+    map <leader>s? z=
 
 " * Tags
 """"""""""""""""""
@@ -173,7 +173,7 @@ let g:mapleader = ","
     " only add tags to the master tag file of the proyect (the script looks for
     " it parent by parent)
     au BufWrite *.py,*.rb,*.cpp,*.c,*.h silent !ctagsadd %:p:h %:p &
-	map <C-]> g<C-]>
+    map <C-]> g<C-]>
 
 " * Yankring
 """"""""""""
@@ -233,4 +233,4 @@ let g:mapleader = ","
     "Turn statusline off
     let g:statusline_enabled = 1
     "Turn on full paths
-    let g:statusline_fullpath = 1 
+    let g:statusline_fullpath = 1
