@@ -116,7 +116,7 @@ snippet ie
 	}
 # for loop
 snippet fo
-	for ${2:i} = 0; $2 < ${1:count}; $2${3:++} {
+	for ${2:i} := 0; $2 < ${1:count}; $2${3:++} {
 		${4:/* code */}
 	}
 # for range loop
@@ -126,7 +126,7 @@ snippet fr
 	}
 # function simple
 snippet fun
-	func ${1:funcName}(${2}) ${3:os.Error} {
+	func ${1:funcName}(${2}) ${3:}{
 		${4:/* code */}
 	}
 # function on receiver
@@ -148,6 +148,9 @@ snippet main
 # new
 snippet nw
 	new(${1:type})
+# package
+snippet pa
+	package ${1:name}
 # panic
 snippet pn
 	panic("${1:msg}")
