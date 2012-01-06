@@ -68,6 +68,8 @@ snippet im
 	import (
 		"${1:package}"
 	)
+
+	${2}
 # interface
 snippet in
 	interface{}
@@ -119,6 +121,11 @@ snippet fo
 	for ${2:i} := 0; $2 < ${1:count}; $2${3:++} {
 		${4:/* code */}
 	}
+# while loop
+snippet wh
+	for ${1} {
+		${2}
+	}
 # for range loop
 snippet fr
 	for ${1:k}, ${2:v} := range ${3} {
@@ -131,7 +138,7 @@ snippet fun
 	}
 # function on receiver
 snippet fum
-	func (self ${1:type}) ${2:funcName}(${3}) ${4:os.Error} {
+	func (self ${1:type}) ${2:funcName}(${3}) ${4:}{
 		${5:/* code */}
 	}
 # make
@@ -151,6 +158,8 @@ snippet nw
 # package
 snippet pa
 	package ${1:name}
+
+	${2}
 # panic
 snippet pn
 	panic("${1:msg}")
@@ -166,6 +175,24 @@ snippet rt
 # result
 snippet rs
 	result
+# script ready
+snippet scr
+	package main
+
+	import (
+		"fmt"
+		"flag"
+	)
+
+	var number = flag.Int("n", 0, "number")
+
+	func main() {
+		flag.Parse()
+
+		${1}
+
+		fmt.Printf("The result is: %d\n", res)
+	}
 # select
 snippet sl
 	select {
