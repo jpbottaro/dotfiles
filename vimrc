@@ -9,13 +9,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
 Bundle 'msanders/snipmate.vim'
 Bundle 'dickeytk/status.vim'
+"Bundle 'Lokaltog/vim-powerline'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'bcnice20/go-vim'
+"Bundle 'fsouza/go.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
 "Bundle 'kevinw/pyflakes-vim'
 "Bundle 'nvie/vim-pep8'
 
@@ -198,13 +200,6 @@ let NERDTreeIgnore = ['\.pyc']
 imap <C-o> <ESC>:NERDTreeToggle<cr>
 map <C-o> :NERDTreeToggle<cr>
 
-" * Syntactic
-"""""""""""""
-
-"let g:syntastic_enable_signs = 1
-"let g:syntastic_auto_loc_list = 1
-"nnoremap <silent> <F5> :Errors<cr>
-
 " * OmniComplete
 """"""""""""""""
 
@@ -213,11 +208,14 @@ let Omnifunc_GlobalScopeSearch   = 1
 let Omnifunc_DisplayMode         = 1
 let Omnifunc_ShowPrototypeInAbbr = 1 "show prototype in pop-up
 let Omnifunc_ShowAccess          = 1 "show access in pop-up
-let Omnifunc_SelectFirstItem     = 0 "select first item in pop-up
+let Omnifunc_SelectFirstItem     = 1 "select first item in pop-up
 set completeopt=menuone,menu,longest
+inoremap <C-Space> <C-x><C-o>
 
 " * Status Line
 """""""""""""""
+
+set laststatus=2 "Always show the statusline
 
 let g:statusline_fugitive = 1
 let g:statusline_fullpath = 1

@@ -9,5 +9,5 @@ chromium-browser subversion sudo suckless-tools vim vim-gnome unzip \
 texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
 urlview git exuberant-ctags mutt msmtp msmtp-gnome unzip ssh \
 pyflakes pep8 tmux rtorrent bash-completion \
-gnome gnome-tweak-tool \
+gnome gnome-tweak-tool hdparm \
 '

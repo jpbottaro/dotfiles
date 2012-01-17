@@ -14,4 +14,5 @@ Notes to self
 	- add GRUB_CMDLINE_LINUX="acpi_osi=Linux" in /etc/default/grup, and
 	update-grup
 	- add blacklist acer_wmi to /etc/modprobe.d/blacklist.conf
-	- add /dev/sda { apm = 255 } to /etc/hdparm.conf
+	- add hdparm -B 255 /dev/sda to /etc/rc.local
+	- copy misc/50-hdparm_pm to /etc/pm/sleep.d/
