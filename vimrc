@@ -103,7 +103,7 @@ try
 catch
 endtry
 
-" * Command Mode
+" * Bindings
 """"""""""""""""
 
 " bash like keys for the command line
@@ -122,6 +122,9 @@ map <C-h> :wincmd <<cr>
 imap <C-h> :wincmd <<cr>
 map <C-l> :wincmd ><cr>
 imap <C-l> :wincmd ><cr>
+
+" quit insert mode with jk
+imap jk <Esc>
 
 
 " * Buffers
