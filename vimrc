@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'msanders/snipmate.vim'
-Bundle 'dickeytk/status.vim'
+"Bundle 'dickeytk/status.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'fholgado/minibufexpl.vim'
