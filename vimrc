@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'kevinw/pyflakes-vim'
 "Bundle 'nvie/vim-pep8'
+Bundle 'vim-scripts/VimClojure'
 
 " enable filetype plugin
 filetype plugin on
@@ -84,6 +85,7 @@ set tabstop=4
 set autoindent
 set smartindent
 set smarttab
+set expandtab
 
 " max text width
 set textwidth=80
@@ -237,3 +239,9 @@ let g:statusline_order = [
 	\ 'CursorColumn',
 	\ 'LineAndTotal',
 	\ 'FilePercent']
+
+" * Settings for VimClojure
+"""""""""""""""""""""""""""
+
+let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
+let vimclojure#ParenRainbow = 1      " Rainbow parentheses
