@@ -4,6 +4,12 @@ things like the ./download script will only work in debian (only wheezy tested)
 To install, simply go to scripts/ and issue ./install, and ./download to get
 all the required packages (debian only)
 
+To set up Vundle (for vim plugins) run:
+
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+And then :BundleInstall in vim
+
 Notes to self
 -------------
 
