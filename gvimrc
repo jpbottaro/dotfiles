@@ -8,4 +8,4 @@ set columns=87
 set lines=999
 
 " set font to inconsolata (remember to install it first)
-set guifont=Inconsolata\ 12
+set guifont=Inconsolata:h14
