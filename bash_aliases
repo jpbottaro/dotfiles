@@ -27,13 +27,14 @@ __git_shortcut  gp    push
 __git_shortcut  gpu   pull 
 __git_shortcut  gba   branch -a 
 __git_shortcut  gco   checkout 
-__git_shortcut  gc   commit -v 
-__git_shortcut  gca  commit '-a -v' 
+__git_shortcut  gc    commit -v 
+__git_shortcut  gca   commit '-a -v' 
 __git_shortcut  gd    diff 
+__git_shortcut  gdl   diff @{1}..
 __git_shortcut  gdc   diff --cached 
 __git_shortcut  gds   diff --stat 
 __git_shortcut  gf    fetch 
-__git_shortcut  gl    log 
+__git_shortcut  gl    log '--no-merges --stat' 
 __git_shortcut  glp   log -p 
 __git_shortcut  gls   log --stat 
 
