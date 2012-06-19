@@ -21,6 +21,7 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'kevinw/pyflakes-vim'
 "Bundle 'nvie/vim-pep8'
 Bundle 'vim-scripts/VimClojure'
+Bundle 'kchmck/vim-coffee-script'
 
 " enable filetype plugin
 filetype plugin on
