@@ -3,3 +3,5 @@
 	name = Juan Pablo Bottaro
 [core]
 	excludesfile = /home/jpbottaro/.gitignore_global
+[color]
+	ui = auto
