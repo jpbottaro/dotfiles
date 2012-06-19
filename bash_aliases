@@ -35,8 +35,7 @@ __git_shortcut  gdc   diff --cached
 __git_shortcut  gds   diff --stat 
 __git_shortcut  gf    fetch 
 __git_shortcut  gl    log '--no-merges --stat' 
-__git_shortcut  glp   log -p 
-__git_shortcut  gls   log --stat 
+__git_shortcut  glp   log '--color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
 
 alias up='su -c "apt-get update && apt-get dist-upgrade -y"'
 alias shut='su -c "shutdown -h now"'
