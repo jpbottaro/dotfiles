@@ -22,6 +22,7 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'nvie/vim-pep8'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'Lokaltog/vim-powerline'
 
 " enable filetype plugin
 filetype plugin on
@@ -246,3 +247,8 @@ let g:statusline_order = [
 
 let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
 let vimclojure#ParenRainbow = 1      " Rainbow parentheses
+
+" * PowerLine
+"""""""""""""
+
+let g:Powerline_symbols = 'fancy'
