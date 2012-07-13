@@ -9,7 +9,8 @@ EDITOR=vim
 # path
 PATH=~/dev/go/bin:~/bin:$PATH
 
-JAVA_HOME=/usr/lib/jvm/default-java
+# use CTRL-T to go forward in history search
+bind '\C-t:forward-search-history'
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
