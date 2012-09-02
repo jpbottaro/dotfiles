@@ -1,13 +1,11 @@
 #!/bin/bash
 
-su -c ' \
-apt-get update && \
-apt-get dist-upgrade && \
-apt-get install --no-install-recommends \
-ttf-inconsolata xdotool xorg build-essential offlineimap \
-chromium-browser subversion sudo suckless-tools vim vim-gnome unzip \
+sudo apt-get update && \
+sudo apt-get dist-upgrade && \
+sudo apt-get install --no-install-recommends \
+xmonad libghc-xmonad-contrib-dev ttf-inconsolata \
+build-essential offlineimap \
+chromium-browser subversion kupfer vim vim-gnome unzip \
 texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
-urlview git exuberant-ctags mutt msmtp msmtp-gnome unzip ssh \
-pyflakes pep8 tmux rtorrent bash-completion \
-gnome gnome-tweak-tool hdparm \
-'
+urlview git exuberant-ctags mutt msmtp msmtp-gnome ssh \
+tmux transmission-gtk bash-completion
