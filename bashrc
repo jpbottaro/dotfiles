@@ -7,7 +7,7 @@
 EDITOR=vim
 
 # path
-PATH=~/dev/go/bin:~/bin:$PATH
+PATH=~/bin:$PATH
 
 # use CTRL-T to go forward in history search
 bind '\C-t:forward-search-history'
@@ -20,8 +20,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
