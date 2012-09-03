@@ -19,9 +19,12 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 
+" syntax highlighting
+filetype off
+syntax on
+
 " enable filetype plugin
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " autoread when a file is changed from the outside
 set autoread
@@ -47,9 +50,6 @@ set nu
 
 " change buffer - without saving
 set hid
-
-" syntax highlighting
-syntax on
 
 " color scheme
 colorscheme desert
