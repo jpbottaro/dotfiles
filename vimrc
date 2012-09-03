@@ -1,5 +1,6 @@
 " dont emulate vi
 set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -18,10 +19,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
-
-" syntax highlighting
-filetype off
-syntax on
 
 " enable filetype plugin
 filetype plugin indent on
@@ -44,6 +41,9 @@ set history=100
 
 " * User Interface
 """"""""""""""""""
+
+" syntax highlighting
+syntax on
 
 " show no line numbers
 set nu
