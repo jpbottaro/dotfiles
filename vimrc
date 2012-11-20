@@ -112,18 +112,17 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " smart way yo move between windows
-map <C-j> :wincmd w<cr>
+map  <C-j> :wincmd w<cr>
 imap <C-j> :wincmd w<cr>
-map <C-k> :wincmd W<cr>
+map  <C-k> :wincmd W<cr>
 imap <C-k> :wincmd W<cr>
-map <C-h> :wincmd <<cr>
+map  <C-h> :wincmd <<cr>
 imap <C-h> :wincmd <<cr>
-map <C-l> :wincmd ><cr>
+map  <C-l> :wincmd ><cr>
 imap <C-l> :wincmd ><cr>
 
 " quit insert mode with jk
 imap jk <Esc>
-
 
 " * Buffers
 """""""""""
