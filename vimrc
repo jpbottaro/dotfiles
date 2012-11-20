@@ -14,12 +14,10 @@ Bundle 'gmarik/vundle'
 Bundle 'msanders/snipmate.vim'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'bcnice20/go-vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/VimClojure'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
 
 " enable filetype plugin
 filetype plugin indent on
@@ -166,15 +164,6 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-" * Tags
-""""""""""""""""""
-
-"set tags=./tags;/
-" only add tags to the master tag file of the proyect (the script looks for
-" it parent by parent)
-"au BufWrite *.py,*.rb,*.cpp,*.c,*.h silent !ctagsadd %:p:h %:p &
-"map <C-]> g<C-]>
-
 " * Yankring
 """"""""""""
 
@@ -194,26 +183,6 @@ map <leader>gc :Gcommit<cr>
 map <leader>gd :Gdiff<cr>
 map <leader>gl :Glog<cr>
 map <leader>gs :Gstatus<cr>
-
-" * NERD_tree
-"""""""""""""
-
-let g:NERDTreeShowBookmarks = 1
-let NERDTreeIgnore = ['\.pyc']
-imap <C-o> <ESC>:NERDTreeToggle<cr>
-map <C-o> :NERDTreeToggle<cr>
-
-" * OmniComplete
-""""""""""""""""
-
-set ofu=syntaxcomplete#Complete
-let Omnifunc_GlobalScopeSearch   = 1
-let Omnifunc_DisplayMode         = 1
-let Omnifunc_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-let Omnifunc_ShowAccess          = 1 "show access in pop-up
-let Omnifunc_SelectFirstItem     = 1 "select first item in pop-up
-set completeopt=menuone,menu,longest
-inoremap <C-Space> <C-x><C-o>
 
 " * Status Line
 """""""""""""""
@@ -237,12 +206,6 @@ let g:statusline_order = [
 	\ 'CursorColumn',
 	\ 'LineAndTotal',
 	\ 'FilePercent']
-
-" * Settings for VimClojure
-"""""""""""""""""""""""""""
-
-let vimclojure#HighlightBuiltins = 1 " Highlight Clojure's builtins
-let vimclojure#ParenRainbow = 1      " Rainbow parentheses
 
 " * PowerLine
 """""""""""""
