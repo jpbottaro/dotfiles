@@ -173,6 +173,8 @@ let g:yankring_history_dir ='$HOME/.vim/'
 """""""""""""""
 
 let g:miniBufExplMaxSize = 1
+let g:miniBufExplCheckDupeBufs = 0
+let g:miniBufExplForceSyntaxEnable = 1
 
 " * Fugitive
 """"""""""""
