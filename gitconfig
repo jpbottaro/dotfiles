@@ -5,3 +5,5 @@
 	excludesfile = /home/jpbottaro/.gitignore_global
 [color]
 	ui = auto
+[push]
+	default = simple
