@@ -11,13 +11,18 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'msanders/snipmate.vim'
-Bundle 'chrismetcalf/vim-yankring'
-Bundle 'fholgado/minibufexpl.vim'
+Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'majutsushi/tagbar'
+Bundle 'klen/python-mode'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'bling/vim-bufferline'
+"Bundle 'fholgado/minibufexpl.vim'
 
 " enable filetype plugin
 filetype plugin indent on
@@ -44,6 +49,9 @@ set history=100
 " syntax highlighting
 syntax on
 
+" don't break syntax highlighting, always rescan from start
+syntax sync minlines=300
+
 " show no line numbers
 set nu
 
@@ -52,9 +60,6 @@ set hid
 
 " color scheme
 colorscheme desert
-
-" have command-line completion (for filenames, help topics, option names)
-set wildmode=list:longest,full
 
 " ignore case when searching
 set ignorecase
@@ -127,41 +132,30 @@ imap jk <Esc>
 " * Buffers
 """""""""""
 
+" delete buffer without closing window
+function! Bclose()
+    let curbufnr = bufnr("%")
+    let altbufnr = bufnr("#")
+
+    if buflisted(altbufnr)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == curbufnr
+        new
+    endif
+
+    if buflisted(curbufnr)
+        execute("bdelete " . curbufnr)
+    endif
+endfunction
+
 " buffer movement
 map <C-Tab> :bn<cr>
 map <C-S-Tab> :bp<cr>
-map <C-W> :bd<cr>
-
-" * Editing Mappings
-""""""""""""""""""""
-
-" move a line using alt+[jk]
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-" delete trailing white space, useful for python
-func! DeleteTrailingWS()
-	exe "normal mz"
-	%s/\s\+$//ge
-	exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-
-set guitablabel=%t
-
-" * Spell checking
-""""""""""""""""""
-
-" pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-" shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+map <C-W> :call Bclose()<cr>
 
 " * Yankring
 """"""""""""
@@ -184,30 +178,43 @@ map <leader>gd :Gdiff<cr>
 map <leader>gl :Glog<cr>
 map <leader>gs :Gstatus<cr>
 
-" * Status Line
-"""""""""""""""
-
-set laststatus=2 "Always show the statusline
-
-let g:statusline_fugitive = 1
-let g:statusline_fullpath = 1
-let g:statusline_enabled = 1
-let g:statusline_order = [
-	\ 'Filename',
-	\ 'CheckUnix',
-	\ 'Encoding',
-	\ 'Modified',
-	\ 'Fugitive',
-	\ 'TabWarning',
-	\ 'TrailingSpaceWarning',
-	\ 'Paste',
-	\ 'ReadOnly',
-	\ 'RightSeperator',
-	\ 'CursorColumn',
-	\ 'LineAndTotal',
-	\ 'FilePercent']
-
 " * PowerLine
 """""""""""""
 
 let g:Powerline_symbols = 'fancy'
+
+" * Tagbar
+""""""""""
+
+autocmd FileType * nested :call tagbar#autoopen(0)
+
+" * Python-mode
+"""""""""""""""
+
+let g:pymode_rope = 0
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+" Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_ignore = "E221,E272"
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
