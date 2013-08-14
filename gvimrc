@@ -8,7 +8,7 @@ set columns=999
 set lines=999
 
 " set font to inconsolata (remember to install it first)
-set guifont=Inconsolata\ For\ Powerline
+set guifont=Inconsolata-dz\ For\ Powerline
 
 " set visual bell (this removes the audio bell on osx)
 "set vb
