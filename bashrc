@@ -7,7 +7,7 @@
 EDITOR=vim
 
 # path
-PATH=~/bin:$PATH
+PATH=~/bin:/usr/local/bin:$PATH
 
 # use CTRL-T to go forward in history search
 bind '\C-t:forward-search-history'
