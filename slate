@@ -1,0 +1,80 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config modalEscapeKey esc
+
+alias centeredWindowWidth 1270
+alias centered screenOriginX+screenSizeX/2-${centeredWindowWidth}/2;screenOriginY ${centeredWindowWidth};screenSizeY
+
+# My typical layout for one big monitor
+# layout oneBigMonitor all corner top-left
+# layout oneBigMonitor 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY 200;screenSizeY 0 | move screenOriginX+screenSizeX-500;screenOriginY 500;300 0
+# bind f1:ctrl;cmd layout oneBigMonitor 
+# default oneBigMonitor count:1
+
+# My typical window layout for two monitors
+# layout twoMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY/3 1 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1
+# layout twoMonitors 'MacVim':TITLE_ORDER_REGEX='.* - VIM1',REPEAT_LAST move screenOriginX+screenSizeX*3/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1 | throw 0 resize
+# layout twoMonitors 'Firefox':REPEAT_LAST throw 0 resize
+# layout twoMonitors 'Eclipse':REPEAT_LAST throw 0 resize
+# layout twoMonitors 'iTerm':REPEAT_LAST throw 0 resize
+# bind f2:ctrl;cmd layout twoMonitors
+# default twoMonitors count:2
+
+# My typical window layout for three monitors
+layout threeMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY 2 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*4/5;screenSizeY/3 2
+layout threeMonitors 'Firefox':REPEAT_LAST throw 0 resize
+layout threeMonitors 'Eclipse':REPEAT_LAST throw 0 resize
+layout threeMonitors 'iTerm':REPEAT_LAST throw 0 resize
+layout threeMonitors 'MacVim':REPEAT_LAST throw 0 resize
+bind f3:ctrl;cmd layout threeMonitors
+default threeMonitors count:3
+
+# Shortcuts to move windows to predefined positions
+bind 1:ctrl;cmd corner top-left     resize:screenSizeX;screenSizeY     0
+bind 2:ctrl;cmd corner top-left     resize:screenSizeX;screenSizeY     1
+bind 3:ctrl;cmd corner top-left     resize:screenSizeX;screenSizeY     2
+
+# Shortcuts to move focus using Vim-style keys
+bind j:ctrl,cmd focus down
+bind k:ctrl,cmd focus up
+bind h:ctrl,cmd focus left
+bind l:ctrl,cmd focus right
+
+# Shortcuts to move windows to screen borders
+bind pad1:ctrl,cmd corner bottom-left resize:screenSizeX/2;screenSizeY/2
+bind pad2:ctrl,cmd push bottom bar-resize:screenSizeY/2
+bind pad3:ctrl,cmd corner bottom-right resize:screenSizeX/2;screenSizeY/2
+bind pad4:ctrl,cmd push left bar-resize:screenSizeX/2
+bind pad5:ctrl,cmd move ${centered}
+bind pad6:ctrl,cmd push right bar-resize:screenSizeX/2
+bind pad7:ctrl,cmd corner top-left resize:screenSizeX/2;screenSizeY/2
+bind pad8:ctrl,cmd push top bar-resize:screenSizeY/2
+bind pad9:ctrl,cmd corner top-right resize:screenSizeX/2;screenSizeY/2
+
+# Shortcuts to move windows between screens
+bind right:ctrl,cmd throw right resize
+bind left:ctrl,cmd  throw left  resize
+bind up:ctrl,cmd    throw above resize
+bind down:ctrl,cmd  throw below resize
+
+alias resizeAndMoveToggle space,cmd,ctrl:toggle
+
+# Shortcuts to incrementally resize and move windows
+bind h:${resizeAndMoveToggle} nudge -10%  +0%
+bind j:${resizeAndMoveToggle} nudge  +0% +10%
+bind k:${resizeAndMoveToggle} nudge  +0% -10%
+bind l:${resizeAndMoveToggle} nudge +10%  +0%
+
+bind a:${resizeAndMoveToggle} resize -10%  +0%
+bind s:${resizeAndMoveToggle} resize  +0% +10%
+bind d:${resizeAndMoveToggle} resize  +0% -10% 
+bind f:${resizeAndMoveToggle} resize +10%  +0%
+
+# Applications
+bind f:alt focus 'Google Chrome'
+bind v:alt focus 'MacVim'
+bind z:alt focus 'Terminal'
+bind p:alt focus 'Eclipse'
+bind i:alt focus 'iTunes'
+bind d:alt focus 'Microsoft Outlook'
