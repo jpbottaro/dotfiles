@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+brew install bash-completion ctags git git-flow macvim mobile-shell mysql node wget
+echo "Download manually"
+echo "-----------------"
+echo "Google Music/Drive"
+echo "Slate"
+echo "VLC"
