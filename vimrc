@@ -18,11 +18,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'majutsushi/tagbar'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'bling/vim-bufferline'
-"Bundle 'fholgado/minibufexpl.vim'
 
 " enable filetype plugin
 filetype plugin indent on
@@ -182,11 +180,6 @@ map <leader>gs :Gstatus<cr>
 """""""""""""
 
 let g:Powerline_symbols = 'fancy'
-
-" * Tagbar
-""""""""""
-
-autocmd FileType * nested :call tagbar#autoopen(0)
 
 " * Python-mode
 """""""""""""""
