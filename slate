@@ -6,27 +6,37 @@ config modalEscapeKey esc
 alias centeredWindowWidth 1270
 alias centered screenOriginX+screenSizeX/2-${centeredWindowWidth}/2;screenOriginY ${centeredWindowWidth};screenSizeY
 
-# My typical layout for one big monitor
-# layout oneBigMonitor all corner top-left
-# layout oneBigMonitor 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY 200;screenSizeY 0 | move screenOriginX+screenSizeX-500;screenOriginY 500;300 0
-# bind f1:ctrl;cmd layout oneBigMonitor 
-# default oneBigMonitor count:1
+# One monitor
+layout oneMonitor all corner top-left
+layout oneMonitor 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY 200;screenSizeY 0 | move screenOriginX+screenSizeX-500;screenOriginY 500;300 0
+layout oneMonitor 'Google Chrome':REPEAT_LAST throw 0 resize
+layout oneMonitor 'MacVim':REPEAT_LAST throw 0 resize
+layout oneMonitor 'iTunes':REPEAT_LAST throw 0 resize
+layout oneMonitor 'Eclipse':REPEAT_LAST throw 0 resize
+layout oneMonitor 'Outlook':REPEAT_LAST throw 0 resize
+layout oneMonitor 'iTerm':REPEAT_LAST throw 0 resize
+bind f1:ctrl;cmd layout oneMonitor
+default oneMonitor count:1
 
-# My typical window layout for two monitors
-# layout twoMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY/3 1 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1
-# layout twoMonitors 'MacVim':TITLE_ORDER_REGEX='.* - VIM1',REPEAT_LAST move screenOriginX+screenSizeX*3/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1 | throw 0 resize
-# layout twoMonitors 'Firefox':REPEAT_LAST throw 0 resize
-# layout twoMonitors 'Eclipse':REPEAT_LAST throw 0 resize
-# layout twoMonitors 'iTerm':REPEAT_LAST throw 0 resize
-# bind f2:ctrl;cmd layout twoMonitors
-# default twoMonitors count:2
+# Two Monitors
+layout twoMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY/3 1 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1
+layout twoMonitors 'Outlook':REPEAT_LAST throw 0 resize
+layout twoMonitors 'iTerm':REPEAT_LAST throw 0 resize
+layout twoMonitors 'iTunes':REPEAT_LAST throw 0 resize
+layout twoMonitors 'Google Chrome':REPEAT_LAST throw 1 resize
+layout twoMonitors 'MacVim':REPEAT_LAST throw 1 resize
+layout twoMonitors 'Eclipse':REPEAT_LAST throw 1 resize
+bind f2:ctrl;cmd layout twoMonitors
+default twoMonitors count:2
 
-# My typical window layout for three monitors
+# Three monitors
 layout threeMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY 2 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*4/5;screenSizeY/3 2
-layout threeMonitors 'Firefox':REPEAT_LAST throw 0 resize
-layout threeMonitors 'Eclipse':REPEAT_LAST throw 0 resize
-layout threeMonitors 'iTerm':REPEAT_LAST throw 0 resize
-layout threeMonitors 'MacVim':REPEAT_LAST throw 0 resize
+layout threeMonitors 'Outlook':REPEAT_LAST throw 0 resize
+layout threeMonitors 'iTunes':REPEAT_LAST throw 0 resize
+layout threeMonitors 'Eclipse':REPEAT_LAST throw 1 resize
+layout threeMonitors 'MacVim':REPEAT_LAST throw 1 resize
+layout threeMonitors 'Google Chrome':REPEAT_LAST throw 1 resize
+layout threeMonitors 'iTerm':REPEAT_LAST throw 2 resize
 bind f3:ctrl;cmd layout threeMonitors
 default threeMonitors count:3
 
@@ -74,7 +84,7 @@ bind f:${resizeAndMoveToggle} resize +10%  +0%
 # Applications
 bind f:alt focus 'Google Chrome'
 bind v:alt focus 'MacVim'
-bind z:alt focus 'Terminal'
+bind z:alt focus 'iTerm'
 bind p:alt focus 'Eclipse'
 bind i:alt focus 'iTunes'
 bind d:alt focus 'Microsoft Outlook'
