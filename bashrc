@@ -12,16 +12,15 @@ PATH=~/bin:/usr/local/bin:$PATH
 # use CTRL-T to go forward in history search
 bind '\C-t:forward-search-history'
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -88,3 +87,15 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
 fi
+
+history() {
+    _bash_history_sync
+    builtin history "$@"
+}
+
+_bash_history_sync() {
+    builtin history -a         #1
+    HISTFILESIZE=$HISTFILESIZE #2
+}
+
+PROMPT_COMMAND=_bash_history_sync
