@@ -13,25 +13,25 @@ layout oneMonitor 'Google Chrome':REPEAT_LAST throw 0 resize
 layout oneMonitor 'MacVim':REPEAT_LAST throw 0 resize
 layout oneMonitor 'iTunes':REPEAT_LAST throw 0 resize
 layout oneMonitor 'Eclipse':REPEAT_LAST throw 0 resize
-layout oneMonitor 'Outlook':REPEAT_LAST throw 0 resize
+layout oneMonitor 'Microsoft Outlook':REPEAT_LAST throw 0 resize
 layout oneMonitor 'iTerm':REPEAT_LAST throw 0 resize
 bind f1:ctrl;cmd layout oneMonitor
 default oneMonitor count:1
 
 # Two Monitors
 layout twoMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY/3 1 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1
-layout twoMonitors 'Outlook':REPEAT_LAST throw 0 resize
-layout twoMonitors 'iTerm':REPEAT_LAST throw 0 resize
-layout twoMonitors 'iTunes':REPEAT_LAST throw 0 resize
-layout twoMonitors 'Google Chrome':REPEAT_LAST throw 1 resize
-layout twoMonitors 'MacVim':REPEAT_LAST throw 1 resize
-layout twoMonitors 'Eclipse':REPEAT_LAST throw 1 resize
+layout twoMonitors 'Microsoft Outlook':REPEAT_LAST throw 1 resize
+layout twoMonitors 'iTerm':REPEAT_LAST throw 1 resize
+layout twoMonitors 'iTunes':REPEAT_LAST throw 1 resize
+layout twoMonitors 'Google Chrome':REPEAT_LAST throw 0 resize
+layout twoMonitors 'MacVim':REPEAT_LAST throw 0 resize
+layout twoMonitors 'Eclipse':REPEAT_LAST throw 0 resize
 bind f2:ctrl;cmd layout twoMonitors
 default twoMonitors count:2
 
 # Three monitors
 layout threeMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY 2 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*4/5;screenSizeY/3 2
-layout threeMonitors 'Outlook':REPEAT_LAST throw 0 resize
+layout threeMonitors 'Microsoft Outlook':REPEAT_LAST throw 0 resize
 layout threeMonitors 'iTunes':REPEAT_LAST throw 0 resize
 layout threeMonitors 'Eclipse':REPEAT_LAST throw 1 resize
 layout threeMonitors 'MacVim':REPEAT_LAST throw 1 resize
