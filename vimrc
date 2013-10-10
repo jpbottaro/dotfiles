@@ -11,16 +11,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'bling/vim-airline'
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'bling/vim-bufferline'
 
 " enable filetype plugin
 filetype plugin indent on
@@ -161,25 +158,20 @@ map <C-W> :call Bclose()<cr>
 nnoremap <silent> <F4> :YRShow<cr>
 let g:yankring_history_dir ='$HOME/.vim/'
 
-" * MiniBufExpl
-"""""""""""""""
-
-let g:miniBufExplMaxSize = 1
-let g:miniBufExplCheckDupeBufs = 0
-
-" * Fugitive
-""""""""""""
-
-map <leader>gb :Gblame<cr>
-map <leader>gc :Gcommit<cr>
-map <leader>gd :Gdiff<cr>
-map <leader>gl :Glog<cr>
-map <leader>gs :Gstatus<cr>
-
-" * PowerLine
+" * CtrlP
 """""""""""""
 
-let g:Powerline_symbols = 'fancy'
+set wildignore+=.*,*Music*,*Library*,*Application*,*/var/*,*/tmp/*
+set wildignore+=*.so,*.swp,*.zip,*.tar*,*.pyc,*.war,*.ivy
+let g:ctrlp_cmd = 'CtrlP'
+
+" * Airline
+"""""""""""""
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline_powerline_fonts = 1
 
 " * Python-mode
 """""""""""""""
