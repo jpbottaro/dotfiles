@@ -3,9 +3,15 @@
 sudo apt-get update && \
 sudo apt-get dist-upgrade && \
 sudo apt-get install --no-install-recommends \
-xmonad libghc-xmonad-contrib-dev ttf-inconsolata \
+gnome-core desktop-base network-manager-gnome \
+file-roller gnome-color-manager gnome-nettool seahorse \
+gimp gnome-tweak-tool libreoffice-gnome \
+telepathy-gabble telepathy-rakia telepathy-salut \
+gnome-applets gnome-shell-extensions gstreamer1.0-plugins-ugly \
+rhythmbox rhythmbox-plugins totem totem-plugins transmission-gtk \
+xmonad libghc-xmonad-contrib-dev \
 build-essential offlineimap \
-chromium-browser subversion kupfer vim vim-gnome unzip \
+chromium vim vim-gnome unzip \
 texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
 urlview git exuberant-ctags mutt msmtp msmtp-gnome ssh \
-tmux transmission-gtk bash-completion
+tmux bash-completion
