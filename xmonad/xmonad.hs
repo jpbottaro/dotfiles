@@ -13,9 +13,9 @@ main = xmonad $ gnomeConfig {
         , focusFollowsMouse = False
         }
     `additionalKeys`
-        [ ((mod1Mask, xK_f), spawn "chromium")
+        [ ((mod1Mask, xK_space), spawn "kupfer")
+        , ((mod1Mask, xK_f), spawn "chromium")
         , ((mod1Mask, xK_v), spawn "gvim")
-        , ((mod1Mask, xK_p), spawn "kupfer")
         , ((mod1Mask, xK_z), spawn "x-terminal-emulator")
         , ((mod1Mask, xK_m), spawn "x-terminal-emulator -e mutt")
         , ((mod1Mask, xK_e), prevScreen)
