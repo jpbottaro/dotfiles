@@ -10,7 +10,7 @@ telepathy-gabble telepathy-rakia telepathy-salut \
 gnome-applets gnome-shell-extensions gstreamer1.0-plugins-ugly \
 rhythmbox rhythmbox-plugins totem totem-plugins transmission-gtk \
 xmonad libghc-xmonad-contrib-dev \
-build-essential offlineimap \
+build-essential offlineimap kupfer \
 chromium vim vim-gnome unzip \
 texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
 urlview git exuberant-ctags mutt msmtp msmtp-gnome ssh \
