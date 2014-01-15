@@ -134,9 +134,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_period),
      sendMessage (IncMasterN (-1)))
 
-  -- Toggle the status bar gap.
-  -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
-
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
      io (exitWith ExitSuccess))
@@ -206,5 +203,6 @@ defaults = defaultConfig {
     mouseBindings      = myMouseBindings,
     layoutHook         = smartBorders $ avoidStruts $ layoutHook defaultConfig,
     manageHook         = manageDocks <+> myManageHook,
+    handleEventHook    = docksEventHook,
     startupHook        = myStartupHook
 }
