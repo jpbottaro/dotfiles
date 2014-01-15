@@ -9,7 +9,6 @@ xrdb -merge ~/.Xdefaults &
 
 tray &
 nm-applet &
-kupfer --no-splash &
 x-terminal-emulator &
 chromium &
 xscreensaver -no-splash &
