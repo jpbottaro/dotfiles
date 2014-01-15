@@ -4,6 +4,7 @@ xsetroot -cursor_name left_ptr &
 xrdb -merge ~/.Xdefaults &
 
 tray &
+kupfer --no-splash &
 x-terminal-emulator &
 chromium &
 xscreensaver -no-splash &
