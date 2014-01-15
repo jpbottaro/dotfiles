@@ -4,14 +4,13 @@ sudo apt-get update && \
 sudo apt-get dist-upgrade && \
 sudo apt-get install --no-install-recommends \
 gnome-core desktop-base network-manager-gnome \
-file-roller gnome-color-manager gnome-nettool seahorse \
-gimp gnome-tweak-tool libreoffice-gnome \
+file-roller gnome-color-manager gimp gnome-tweak-tool \
+libreoffice-gtk3 gstreamer1.0-plugins-ugly \
 telepathy-gabble telepathy-rakia telepathy-salut \
-gnome-applets gnome-shell-extensions gstreamer1.0-plugins-ugly \
 rhythmbox rhythmbox-plugins totem totem-plugins transmission-gtk \
-xmonad libghc-xmonad-contrib-dev \
-build-essential offlineimap kupfer \
-chromium vim vim-gnome unzip \
+xmonad xmobar libghc-xmonad-contrib-dev \
+build-essential kupfer scrot stalonetray \
+chromium vim vim-gtk unzip \
 texlive texlive-latex-extra texlive-fonts-extra latex-beamer \
-urlview git exuberant-ctags mutt msmtp msmtp-gnome ssh \
+git exuberant-ctags ssh \
 tmux bash-completion
