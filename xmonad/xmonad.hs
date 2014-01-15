@@ -37,7 +37,6 @@ myFocusedBorderColor = "#ffb6b0"
 xmobarTitleColor = "#FFB6B0"
 xmobarCurrentWorkspaceColor = "#CEFFAC"
 
-
 myModMask = mod1Mask
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask, xK_z), spawn $ XMonad.terminal conf)
@@ -192,7 +191,7 @@ main = do
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
           , ppSep = "   "
       }
-      , startupHook = setWMName "LG3D"
+--      , startupHook = setWMName "LG3D"
   }
 
 defaults = defaultConfig {
@@ -205,7 +204,7 @@ defaults = defaultConfig {
     focusedBorderColor = myFocusedBorderColor,
     keys               = myKeys,
     mouseBindings      = myMouseBindings,
-    layoutHook         = avoidStruts $ smartBorders $ layoutHook defaultConfig,
+    layoutHook         = smartBorders $ avoidStruts $ layoutHook defaultConfig,
     manageHook         = manageDocks <+> myManageHook,
     startupHook        = myStartupHook
 }
