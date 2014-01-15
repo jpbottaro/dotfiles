@@ -41,7 +41,7 @@ xmobarCurrentWorkspaceColor = "#CEFFAC"
 myModMask = mod1Mask
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask, xK_z), spawn $ XMonad.terminal conf)
-  , ((modMask, xK_l), spawn "xscreensaver-command -lock")
+  , ((modMask, xK_u), spawn "xscreensaver-command -lock")
   , ((modMask, xK_p), spawn "kupfer")
   , ((modMask, xK_f), spawn "chromium")
   , ((modMask, xK_v), spawn "gvim")
