@@ -47,8 +47,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask, xK_p), spawn "select-screenshot")
   , ((modMask .|. controlMask .|. shiftMask, xK_p), spawn "screenshot")
   , ((modMask .|. controlMask, xK_m), spawn "amixer -q set Master toggle")
-  , ((modMask .|. controlMask, xK_j), spawn "amixer -q set Master 10%-")
-  , ((modMask .|. controlMask, xK_k), spawn "amixer -q set Master 10%+")
+  , ((modMask .|. controlMask, xK_j), spawn "amixer -q set Master 5%-")
+  , ((modMask .|. controlMask, xK_k), spawn "amixer -q set Master 5%+")
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
