@@ -2,7 +2,7 @@ Config {
     font = "xft:Fixed-8",
     bgColor = "#000000",
     fgColor = "#ffffff",
-    position = Static { xpos = 0, ypos = 0, width = 1600, height = 16 },
+    position = Static { xpos = 0, ypos = 0, width = 1500, height = 16 },
     lowerOnStart = True,
     commands = [
         Run Weather "SABE" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
@@ -11,9 +11,10 @@ Config {
         Run Swap ["-t","Swap: <usedratio>%","-H","1024","-L","512","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Network "eth0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
+        Run Battery ["-t","<left>% / <timeleft>","-L","50","-H","75","-h","green","-n","yell","-l","red"] 10,
         Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{ %multicpu%   %memory%   %swap%   %eth0%   <fc=#FFFFCC>%date%</fc>   %SABE%"
+    template = "%StdinReader% }{ %multicpu%   %memory%   %swap%   %eth0%   <fc=#FFFFCC>%date%</fc>   %SABE%   %Battery%"
 }

@@ -1,2 +1,2 @@
-stalonetray -i 12 --window-type normal --geometry 5x1+1600 \
+stalonetray -i 12 --window-type normal --geometry 11x1+1500 \
     --window-strut none --background black --icon-gravity NE

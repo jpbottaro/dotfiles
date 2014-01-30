@@ -28,7 +28,7 @@ myManageHook = composeAll
     , className =? "VirtualBox"     --> doShift "4:vm"
     , className =? "Xchat"          --> doShift "5:media"
     , className =? "stalonetray"    --> doIgnore
-    , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
+    , isFullscreen                  --> doFullFloat]
 
 myBorderWidth = 1
 myNormalBorderColor  = "#7c7c7c"
