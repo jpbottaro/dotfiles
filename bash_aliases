@@ -1,23 +1,6 @@
-# git aliases completion
-__define_git_completion () { 
-eval " 
-    _git_$2_shortcut () { 
-        COMP_LINE=\"git $2\${COMP_LINE#$1}\" 
-        let COMP_POINT+=$((4+${#2}-${#1})) 
-        COMP_WORDS=(git $2 \"\${COMP_WORDS[@]:1}\") 
-        let COMP_CWORD+=1 
-
-        local cur words cword prev 
-        _get_comp_words_by_ref -n =: cur words cword prev 
-        _git_$2 
-    } 
-" 
-} 
-
 __git_shortcut () { 
-    type _git_$2_shortcut &>/dev/null || __define_git_completion $1 $2 
     alias $1="git $2 $3" 
-    complete -o default -o nospace -F _git_$2_shortcut $1 
+    __git_complete $1 _git_$2 &>/dev/null
 } 
 
 __git_shortcut  ga    add 
