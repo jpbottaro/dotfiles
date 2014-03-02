@@ -1,2 +1,3 @@
-stalonetray -i 12 --window-type normal --geometry 11x1+1500 \
-    --window-strut none --background black --icon-gravity NE
+stalonetray -i 16 --window-type normal --geometry 9x1+1295 \
+    --window-strut none --background black --icon-gravity NE \
+    --kludges force_icons_size
