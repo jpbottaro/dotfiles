@@ -5,6 +5,7 @@ sudo apt-get dist-upgrade && \
 sudo apt-get install --no-install-recommends \
 xinit desktop-base network-manager-gnome \
 lightdm lightdm-gtk-greeter \
+gnome-human-icon-theme clearlooks-phenix-theme \
 libreoffice-gtk3 gstreamer1.0-plugins-ugly \
 rhythmbox rhythmbox-plugins transmission-gtk \
 xmonad xmobar libghc-xmonad-contrib-dev gnome-mplayer \
