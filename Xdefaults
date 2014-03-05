@@ -1,0 +1,5 @@
+URxvt*scrollBar: false
+URxvt*foreground: Green
+URxvt*background: Black
+URxvt*font: xft:Inconsolata:size=12:antialias=true:hinting=true
+URxvt*boldFont: xft:Inconsolata:bold:pixelsize=12:antialias=true:hinting=true
