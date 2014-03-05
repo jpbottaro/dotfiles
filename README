@@ -16,3 +16,7 @@ Notes to self
 
 - To get remap keyboard, go to /etc/default/keyboard and fix it there
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
+
+- Use powertop to improve battery life
+
+- Install pommed for macs (the light version which is more up to date)

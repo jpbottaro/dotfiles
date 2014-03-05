@@ -12,4 +12,4 @@ xmonad xmobar libghc-xmonad-contrib-dev gnome-mplayer \
 build-essential kupfer scrot stalonetray \
 chromium vim vim-gtk unzip alsa-utils \
 texlive texlive-latex-extra texlive-fonts-extra \
-git ssh tmux bash-completion
+git ssh tmux bash-completion powertop
