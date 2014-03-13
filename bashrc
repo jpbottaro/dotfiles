@@ -102,3 +102,13 @@ _bash_history_sync() {
 }
 
 PROMPT_COMMAND=_bash_history_sync
+
+# set dual monitors
+dual () {
+    xrandr --output HDMI1 --primary --auto --right-of eDP1 --output eDP1 --auto
+}
+
+# set single monitor
+single () {
+    xrandr --output eDP1 --primary --auto --output HDMI1 --off
+}

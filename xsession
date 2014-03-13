@@ -2,7 +2,7 @@ PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
 xsetroot -cursor_name left_ptr &
 xrdb -merge ~/.Xdefaults &
-xrandr --output VGA1 --auto --pos 0x0 --output LVDS1 --auto --right-of VGA1 &
+xrandr --output HDMI1 --primary --auto --right-of eDP1 --output eDP1 --auto
 setxkbmap -layout us -variant intl -option ctrl:nocaps
 
 if [ -s ~/.Xmodmap ]; then
