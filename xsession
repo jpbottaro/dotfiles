@@ -1,9 +1,10 @@
 PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
-xsetroot -cursor_name left_ptr &
-xrdb -merge ~/.Xdefaults &
+xsetroot -cursor_name left_ptr
+xrdb -merge ~/.Xdefaults
 xrandr --output HDMI1 --primary --auto --right-of eDP1 --output eDP1 --auto
 setxkbmap -layout us -variant intl -option ctrl:nocaps
+feh --bg-fill .wallpaper
 
 if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap &
