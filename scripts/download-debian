@@ -5,9 +5,9 @@ sudo apt-get dist-upgrade && \
 sudo apt-get install --no-install-recommends \
 rxvt-unicode xinit desktop-base network-manager-gnome \
 lightdm lightdm-gtk-greeter systemd-sysv \
-dmz-cursor-theme \
+dmz-cursor-theme gstreamer1.0-plugins-ugly \
 gnome-human-icon-theme clearlooks-phenix-theme \
-libreoffice-gtk3 gstreamer1.0-plugins-ugly \
+libreoffice libreoffice-gtk \
 rhythmbox rhythmbox-plugins transmission-gtk \
 xmonad xmobar libghc-xmonad-contrib-dev gnome-mplayer \
 build-essential kupfer scrot stalonetray \
