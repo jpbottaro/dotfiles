@@ -12,11 +12,12 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 
 " enable filetype plugin
@@ -172,6 +173,11 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline_powerline_fonts = 1
+
+" * NERDTree
+"""""""""""""""
+
+map <C-O> :NERDTreeToggle<cr>
 
 " * Python-mode
 """""""""""""""
