@@ -13,7 +13,6 @@ fi
 unclutter &
 tray &
 nm-applet &
-google-musicmanager &
 x-terminal-emulator &
 chromium &
 xscreensaver -no-splash &
