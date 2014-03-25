@@ -8,7 +8,7 @@ for name in *; do
             # Harcoded bin reference
             target="$HOME/$name"
         fi
-        if [[ $name != 'README' && $name != 'scripts' ]]; then
+        if [[ $name != 'misc' && $name != 'README' && $name != 'scripts' ]]; then
             echo "Creating $target"
             if [ -e $target ]; then
                 mv "$target" "$target".bk
