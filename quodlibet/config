@@ -1,0 +1,119 @@
+[header_maps]
+
+[rename]
+ascii = false
+spaces = false
+windows = true
+
+[settings]
+bayesian_rating_factor = 0.0
+columns = artist,~title~version,album,~#length
+default_rating = 0.5
+disable_hints = false
+eager_search = true
+jump = true
+rating_symbol_blank = ☆
+rating_symbol_full = ★
+ratings = 4
+repeat = true
+scan = /home/jpbottaro/Music
+
+[memory]
+browser = AlbumList
+order = inorder
+plugin_selection = Notify
+queue = False
+queue_position = 1.0
+quodlibet_information_maximized = 0
+quodlibet_information_position = 520 258
+quodlibet_information_size_ = 400 400
+quodlibet_maximized = 0
+quodlibet_position = 0 17
+quodlibet_properties_maximized = 0
+quodlibet_properties_position = 420 258
+quodlibet_properties_size_ = 600 400
+quodlibet_properties_size_single = 462 400
+quodlibet_size_ = 1440 883
+seek = 28003
+shufflequeue = false
+song = /home/jpbottaro/Music/Van Morrison/Astral Weeks/04 Cyprus Avenue.mp3
+songlist = True
+sortby = 0
+volume = 1.0
+
+[library]
+exclude = 
+refresh_on_start = true
+
+[player]
+backend = gstbe
+fallback_gain = 0.0
+gst_buffer = 1.5
+gst_device = 
+gst_pipeline = 
+pre_amp_gain = 0.0
+replaygain = true
+time_remaining = false
+
+[tagsfrompath]
+add = false
+split = false
+titlecase = false
+underscores = false
+
+[browsers]
+album_covers = true
+album_sort = 0
+album_substrings = true
+albumlist_pos = 0.4
+albums = Astral Weeks
+background = 
+collection_headers = ~people 0
+collectionbrowser_pos = 0.4
+cover_size = -1
+pane_selection = 
+panedbrowser_pos = 0.477678571429
+panes = ~people	<~year|\<b\>\<i\><~year>\</i\>\</b\> - ><album>
+query_text = 
+radio = 
+rating_click = true
+rating_confirm_multiple = false
+search_limit = false
+
+[albumart]
+filename = folder.jpg
+force_filename = false
+prefer_embedded = false
+round = true
+
+[plugins]
+active_plugins = Notify
+	View Lyrics
+animosd_bcolor = (0.0, 0.0, 0.0, 0.2)
+animosd_fill = (0.25, 0.25, 0.25, 0.5)
+animosd_outline = (-1.0, 0.0, 0.0, 0.2)
+animosd_shadow = (-1.0, 0.0, 0.0, 0.1)
+animosd_text = (0.9, 0.9, 0.9, 0.0)
+icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
+notify_bodypattern = <album|<album><discsubtitle| - <discsubtitle>>
+	><~length>
+notify_show_notifications = all
+quodlibet.fake.plugins.gajim_status_accounts = 
+quodlibet.fake.plugins.gajim_status_pattern = <artist> - <title>
+quodlibet.fake.plugins.gajim_status_paused = True
+quodlibet.fake.plugins.gajim_status_statuses = online chat
+quodlibet.fake.plugins.wikipedia = en
+quodlibet.fake.plugins.write_cover = /home/jpbottaro/.quodlibet/current.cover
+squeezebox_debug = False
+titlecase_allow_all_caps = True
+titlecase_human_title_case = True
+
+[editing]
+alltags = true
+auto_save_changes = false
+human_title_case = true
+id3encoding = 
+save_email = quodlibet@lists.sacredchao.net
+save_to_songs = true
+split_on = / & ,
+
