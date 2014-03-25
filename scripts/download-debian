@@ -7,8 +7,8 @@ rxvt-unicode xinit desktop-base network-manager-gnome \
 lightdm lightdm-gtk-greeter systemd-sysv \
 dmz-cursor-theme gstreamer1.0-plugins-ugly \
 gnome-human-icon-theme clearlooks-phenix-theme \
-libreoffice libreoffice-gtk feh \
-rhythmbox rhythmbox-plugins transmission-gtk \
+libreoffice libreoffice-gtk feh dunst \
+quodlibet transmission-gtk \
 xmonad xmobar libghc-xmonad-contrib-dev vlc \
 build-essential kupfer scrot stalonetray \
 chromium vim vim-gtk unzip alsa-utils \

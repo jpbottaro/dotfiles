@@ -12,6 +12,7 @@ fi
 
 unclutter &
 tray &
+dunst -config .dunstrc &
 nm-applet &
 google-musicmanager &
 x-terminal-emulator &
