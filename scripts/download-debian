@@ -11,6 +11,6 @@ libreoffice libreoffice-gtk feh dunst \
 quodlibet transmission-gtk xscreensaver-gl \
 xmonad xmobar libghc-xmonad-contrib-dev vlc \
 build-essential kupfer scrot stalonetray \
-chromium vim vim-gtk unzip alsa-utils \
+chromium vim vim-gtk unzip alsa-utils alsa-base \
 texlive texlive-latex-extra texlive-fonts-extra \
 git ssh tmux bash-completion powertop
