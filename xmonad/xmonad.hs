@@ -40,7 +40,7 @@ xmobarCurrentWorkspaceColor = "#CEFFAC"
 myModMask = mod1Mask
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask, xK_z), spawn $ XMonad.terminal conf)
-  , ((modMask, xK_u), spawn "xscreensaver-command -lock")
+  , ((modMask, xK_s), spawn "xscreensaver-command -lock")
   , ((modMask, xK_p), spawn "kupfer")
   , ((modMask, xK_f), spawn "chromium")
   , ((modMask, xK_v), spawn "gvim")
@@ -53,22 +53,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
   --
-
-  -- Audio previous.
-  , ((0, 0x1008FF16),
-     spawn "")
-
-  -- Play/pause.
-  , ((0, 0x1008FF14),
-     spawn "")
-
-  -- Audio next.
-  , ((0, 0x1008FF17),
-     spawn "")
-
-  -- Eject CD tray.
-  , ((0, 0x1008FF2C),
-     spawn "eject -T")
 
   -- Close focused window.
   , ((modMask .|. shiftMask, xK_c),
