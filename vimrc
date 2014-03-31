@@ -15,7 +15,6 @@ Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'msanders/snipmate.vim'
-Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'klen/python-mode'
@@ -153,18 +152,13 @@ map <C-Tab> :bn<cr>
 map <C-S-Tab> :bp<cr>
 map <C-W> :call Bclose()<cr>
 
-" * Yankring
-""""""""""""
-
-nnoremap <silent> <F4> :YRShow<cr>
-let g:yankring_history_dir ='$HOME/.vim/'
-
 " * CtrlP
 """""""""""""
 
 set wildignore+=.*,*Music*,*Library*,*Application*,*/var/*,*/tmp/*
 set wildignore+=*.so,*.swp,*.zip,*.tar*,*.pyc,*.war,*.ivy
 let g:ctrlp_cmd = 'CtrlP'
+map <C-P> :CtrlP<cr>
 
 " * Airline
 """""""""""""
