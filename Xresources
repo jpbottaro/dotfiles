@@ -26,3 +26,6 @@ xscreensaver.dateFormat:                 %I:%M%P %a %b %d, %Y
 xscreensaver.passwd.thermometer.foreground: #ff0000
 xscreensaver.passwd.thermometer.background: #000000
 xscreensaver.passwd.thermometer.width:      8
+xscreensaver.lock: True
+xscreensaver.fade: False
+xscreensaver.unfade: False
