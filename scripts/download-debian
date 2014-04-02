@@ -10,7 +10,7 @@ gnome-human-icon-theme clearlooks-phenix-theme \
 libreoffice libreoffice-gtk feh dunst \
 quodlibet transmission-gtk xscreensaver-gl \
 xmonad xmobar libghc-xmonad-contrib-dev vlc \
-build-essential kupfer scrot stalonetray \
+build-essential kupfer scrot stalonetray zathura \
 chromium vim vim-gtk unzip alsa-utils alsa-base \
 texlive texlive-latex-extra texlive-fonts-extra \
-git ssh tmux bash-completion powertop
+git ssh tmux bash-completion powertop gtk-redshift

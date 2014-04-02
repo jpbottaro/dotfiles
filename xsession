@@ -15,6 +15,7 @@ tray &
 nm-applet &
 x-terminal-emulator &
 chromium &
+gtk-redshift -l -34.64:-58.45 &
 xscreensaver -no-splash &
 
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
