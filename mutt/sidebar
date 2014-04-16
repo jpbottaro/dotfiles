@@ -1,9 +1,0 @@
-unset sidebar_visible
-set sidebar_width = 25
-
-color sidebar_new brightyellow default
-
-bind index,pager <esc>j sidebar-next
-bind index,pager <esc>k sidebar-prev
-bind index,pager <esc>l sidebar-open
-macro index,pager <f3> "<enter-command>toggle sidebar_visible<enter>"

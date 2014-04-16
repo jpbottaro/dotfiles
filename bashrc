@@ -79,13 +79,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+
+if type brew 2> /dev/null; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
 # directory bookmarks
 if [ -f ~/bin/bashmarks ]; then
     . ~/bin/bashmarks
-fi
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      . $(brew --prefix)/etc/bash_completion
 fi
 
 history() {
@@ -99,3 +102,13 @@ _bash_history_sync() {
 }
 
 PROMPT_COMMAND=_bash_history_sync
+
+# set dual monitors
+dual () {
+    xrandr --output HDMI1 --primary --auto --right-of eDP1 --output eDP1 --auto
+}
+
+# set single monitor
+single () {
+    xrandr --output eDP1 --primary --auto --output HDMI1 --off
+}

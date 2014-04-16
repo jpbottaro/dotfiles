@@ -1,0 +1,5 @@
+! Swap alt and super (for mac)
+remove mod1 = Alt_L
+remove mod4 = Super_L Super_R
+add mod1 = Super_L Super_R
+add mod4 = Alt_L
