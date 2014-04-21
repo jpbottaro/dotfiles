@@ -19,6 +19,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'klen/python-mode'
+Bundle 'wting/rust.vim'
 
 " enable filetype plugin
 filetype plugin indent on
