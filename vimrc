@@ -48,7 +48,7 @@ syntax on
 " don't break syntax highlighting, always rescan from start
 syntax sync minlines=300
 
-" show no line numbers
+" show line numbers
 set nu
 
 " change buffer - without saving
