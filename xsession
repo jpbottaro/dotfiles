@@ -15,7 +15,10 @@ tray &
 nm-applet &
 x-terminal-emulator &
 chromium &
-gtk-redshift -l -34.64:-58.45 &
+# BsAs
+#gtk-redshift -l -34.64:-58.45 &
+# Dublin
+gtk-redshift -l 53.33:-6.24 &
 xscreensaver -no-splash &
 
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
