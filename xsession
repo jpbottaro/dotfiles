@@ -4,6 +4,7 @@ xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xresources
 xrandr --output HDMI1 --primary --auto --right-of eDP1 --output eDP1 --auto
 setxkbmap -layout us -variant altgr-intl -option ctrl:nocaps
+xset r rate 200 30
 feh --bg-fill .wallpaper
 
 if [ -s ~/.Xmodmap ]; then
