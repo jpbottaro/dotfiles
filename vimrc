@@ -74,6 +74,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" highlight as you type you search phrase
+set scrolloff=5
+
 " * Text Formatting
 """""""""""""""""""
 
