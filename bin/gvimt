@@ -1,9 +1,0 @@
-#!/bin/sh
-
-TABLIST=.gvimtabs
-
-if [ -f "$TABLIST" ]; then
-	xargs gvim $1 -p < $TABLIST
-else
-    gvim $1
-fi
