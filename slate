@@ -19,7 +19,7 @@ bind f1:ctrl;cmd layout oneMonitor
 default oneMonitor count:1
 
 # Two Monitors
-layout twoMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY/3 1 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*2/5;screenSizeY/3 1
+layout twoMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY/3 1 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*2/5;screenSizeY/3 0
 layout twoMonitors 'Microsoft Outlook':REPEAT_LAST throw 0 resize
 layout twoMonitors 'iTerm':REPEAT_LAST throw 0 resize
 layout twoMonitors 'iTunes':REPEAT_LAST throw 0 resize
@@ -30,7 +30,7 @@ bind f2:ctrl;cmd layout twoMonitors
 default twoMonitors count:2
 
 # Three monitors
-layout threeMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY 2 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*4/5;screenSizeY/3 2
+layout threeMonitors 'Adium':TITLE_ORDER_REGEX=Contacts move screenOriginX;screenOriginY screenSizeX/5;screenSizeY 2 | move screenOriginX+screenSizeX/5;screenOriginY screenSizeX*4/5;screenSizeY/3 0
 layout threeMonitors 'iTerm':REPEAT_LAST throw 0 resize
 layout threeMonitors 'Microsoft Outlook':REPEAT_LAST throw 1 resize
 layout threeMonitors 'iTunes':REPEAT_LAST throw 1 resize
@@ -82,9 +82,11 @@ bind d:${resizeAndMoveToggle} resize  +0% -10%
 bind f:${resizeAndMoveToggle} resize +10%  +0%
 
 # Applications
+bind a:alt focus 'Adium'
 bind f:alt focus 'Google Chrome'
 bind v:alt focus 'MacVim'
 bind z:alt focus 'iTerm'
 bind p:alt focus 'Eclipse'
 bind i:alt focus 'iTunes'
+bind s:alt focus 'Spotify'
 bind d:alt focus 'Microsoft Outlook'
