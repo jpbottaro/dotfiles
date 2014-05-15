@@ -17,6 +17,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'klen/python-mode'
 Bundle 'wting/rust.vim'
@@ -39,6 +40,9 @@ set undolevels=100
 
 " have fifty lines of command-line (etc) history:
 set history=100
+
+" sane backspace
+set backspace=indent,eol,start
 
 " * User Interface
 """"""""""""""""""
@@ -172,6 +176,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
 
 " * NERDTree
 """""""""""""""
