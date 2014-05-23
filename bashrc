@@ -4,10 +4,10 @@
 [ -z "$PS1" ] && return
 
 # editor
-EDITOR=vim
+export EDITOR=vim
 
 # path
-PATH=~/bin:/usr/local/linkedin/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=~/bin:$PATH
 
 # use CTRL-T to go forward in history search
 bind '\C-t:forward-search-history'
@@ -50,9 +50,6 @@ PS1="$RED\u@\h $YELLOW\w$GREEN\$(__git_ps1) $WHITE\$ "
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -63,7 +60,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 
 # enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# this if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion

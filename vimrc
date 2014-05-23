@@ -12,15 +12,11 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'klen/python-mode'
-Bundle 'wting/rust.vim'
 
 " enable filetype plugin
 filetype plugin indent on
@@ -29,8 +25,8 @@ filetype plugin indent on
 set autoread
 
 " set leader to ,
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = ','
+let g:mapleader = ','
 
 " * Misc
 """"""""
@@ -64,6 +60,7 @@ colorscheme desert
 
 " ignore case when searching
 set ignorecase
+set smartcase
 
 " highlight as you type you search phrase
 set incsearch
@@ -113,13 +110,6 @@ endtry
 " * Bindings
 """"""""""""""""
 
-" bash like keys for the command line
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-cnoremap <C-K> <C-U>
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
-
 " smart way yo move between windows
 map  <C-j> :wincmd w<cr>
 imap <C-j> :wincmd w<cr>
@@ -138,8 +128,8 @@ imap jk <Esc>
 
 " delete buffer without closing window
 function! Bclose()
-    let curbufnr = bufnr("%")
-    let altbufnr = bufnr("#")
+    let curbufnr = bufnr('%')
+    let altbufnr = bufnr('#')
 
     if buflisted(altbufnr)
         buffer #
@@ -147,12 +137,12 @@ function! Bclose()
         bnext
     endif
 
-    if bufnr("%") == curbufnr
+    if bufnr('%') == curbufnr
         new
     endif
 
     if buflisted(curbufnr)
-        execute("bdelete " . curbufnr)
+        execute('bdelete ' . curbufnr)
     endif
 endfunction
 
@@ -161,13 +151,9 @@ map <C-Tab> :bn<cr>
 map <C-S-Tab> :bp<cr>
 map <C-W> :call Bclose()<cr>
 
-" * CtrlP
-"""""""""""""
-
-set wildignore+=.*,*Music*,*Library*,*Application*,*/var/*,*/tmp/*
-set wildignore+=*.so,*.swp,*.zip,*.tar*,*.pyc,*.war,*.ivy
-let g:ctrlp_cmd = 'CtrlP'
-map <C-P> :CtrlP<cr>
+" autocomplete
+imap <C-N> <C-X><C-O><C-P>
+set completeopt-=preview
 
 " * Airline
 """""""""""""
@@ -182,6 +168,7 @@ let g:airline_theme='dark'
 """""""""""""""
 
 map <C-O> :NERDTreeToggle<cr>
+let NERDTreeIgnore = ['\.pyc$']
 
 " * Python-mode
 """""""""""""""
@@ -194,8 +181,8 @@ let g:pymode_doc_key = 'K'
 
 " Linting
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore = "E111,E121,E123,W292"
+let g:pymode_lint_checker = 'pyflakes,pep8'
+let g:pymode_lint_ignore = 'E111,E121,E123,W292,C901'
 let g:pymode_lint_write = 1
 
 " Support virtualenv
@@ -213,3 +200,4 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+let g:pymode_indent = 1
