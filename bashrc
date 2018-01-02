@@ -6,6 +6,9 @@
 # editor
 export EDITOR=vim
 
+# java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # path
 export PATH=~/bin:$PATH
 
@@ -56,7 +59,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -laF | grep -v "^-" && ls -laF | grep "^-"'
 alias la='ls -A'
 
 # enable programmable completion features (you don't need to enable
@@ -66,7 +69,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if type brew 2> /dev/null; then
+if type brew > /dev/null 2>&1; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
     fi
