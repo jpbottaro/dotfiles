@@ -49,6 +49,8 @@ PS1="$RED\u@\h $YELLOW\w$GREEN\$(__git_ps1) $WHITE\$ "
 
 #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
+alias ls='ls -G'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
