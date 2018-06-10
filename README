@@ -17,12 +17,5 @@ Notes to self (for linux)
 - To get remap keyboard, go to /etc/default/keyboard and fix it there
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
 
-- Install pommed for macs (the light version which is more up to date)
-
-- Add touchpad config (misc/50-synaptics.conf) to /etc/X11/xorg.conf.d/
-
 - Install inconsolate by moving otf font to /usr/share/fonts/truetype/inconsolata/
   and issuing "sudo fc-cache -fv"
-
-- Add xscreensaver.service file to /etc/systemd/system/ and
-  "sudo systemctl enable xscreensaver"

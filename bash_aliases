@@ -26,4 +26,8 @@ alias reb='su -c "shutdown -r now"'
 alias att='tmux attach'
 alias cpkill='sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist'
 alias lap='mosh jbottaro-mn3'
-alias box='mosh jbottaro-ld2'
+alias box='mosh jbottaro-ld3'
+
+who_consumes () {
+    metrics -f prod-ltx1 search -w "*$1*" | grep rrd | cut -d "/" -f 1 | sort | uniq
+}
