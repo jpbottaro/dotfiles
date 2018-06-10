@@ -16,7 +16,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
-Bundle 'klen/python-mode'
+Bundle 'tpope/vim-commentary'
 
 " enable filetype plugin
 filetype plugin indent on
@@ -71,7 +71,7 @@ set mat=2
 
 " no sound on errors
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 set tm=500
 
@@ -169,35 +169,3 @@ let g:airline_theme='dark'
 
 map <C-O> :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['\.pyc$']
-
-" * Python-mode
-"""""""""""""""
-
-let g:pymode_rope = 0
-
-" Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
-
-" Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checker = 'pyflakes,pep8'
-let g:pymode_lint_ignore = 'E111,E121,E123,W292,C901'
-let g:pymode_lint_write = 1
-
-" Support virtualenv
-let g:pymode_virtualenv = 1
-
-" Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_key = '<leader>b'
-
-" syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-" Don't autofold code
-let g:pymode_folding = 0
-let g:pymode_indent = 1
