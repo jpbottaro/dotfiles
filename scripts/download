@@ -3,9 +3,11 @@
 sudo apt-get update && \
 sudo apt-get upgrade -y && \
 sudo apt-get install -y \
-lightdm mate-desktop-environment indicator-applet-complete \
-mate-utils ubuntu-mate-icon-themes ubuntu-mate-themes \
+lightdm lightdm-autologin-greeter mate-desktop-environment \
+mate-tweak mate-utils \
+mate-session-manager mate-screensaver mate-indicator-applet \
+ubuntu-wallpapers ubuntu-mate-icon-themes ubuntu-mate-themes \
 transmission-gtk i3-wm vlc suckless-tools \
 firefox vim vim-gtk unzip \
 build-essential git ssh mosh tmux bash-completion \
-libavcodec-extra ubuntu-restricted-extras
+openjdk-14-jdk
