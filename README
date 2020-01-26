@@ -1,9 +1,8 @@
-Just some configurations files I use. This is mostly distro-independent, but
-things like the ./download script will only work in debian/ubuntu (for debian,
-add gnome to the package list)
+Ubuntu Mate + i3
+----------------
 
-To install, simply go to scripts/ and issue ./install, and ./download to get
-all the required packages (debian only)
+Best suited for ubuntu core/server. To install, simply go to scripts/ and issue
+./install, and ./download to get all the required packages (ubuntu/debian only)
 
 To set up Vundle (for vim plugins) run:
 
@@ -19,3 +18,5 @@ Notes to self (for linux)
 
 - Install inconsolate by moving otf font to /usr/share/fonts/truetype/inconsolata/
   and issuing "sudo fc-cache -fv"
+
+- Move misc/i3.config to .config/i3/config
