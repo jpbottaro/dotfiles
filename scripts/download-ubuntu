@@ -5,6 +5,6 @@ sudo apt-get upgrade && \
 sudo apt-get install \
 lightdm mate-desktop-environment indicator-applet-complete \
 mate-utils ubuntu-mate-icon-themes ubuntu-mate-themes \
-transmission-gtk i3-wm mpv suckless-tools \
+transmission-gtk i3-wm vlc suckless-tools \
 firefox vim vim-gtk unzip \
 build-essential git ssh mosh tmux bash-completion
