@@ -1,22 +1,22 @@
 Ubuntu Mate + i3
 ----------------
 
-Best suited for ubuntu core/server. To install, simply go to scripts/ and issue
-./install, and ./download to get all the required packages (ubuntu/debian only)
+Best suited for ubuntu core/server.
 
-To set up Vundle (for vim plugins) run:
+To install, go to scripts/ and issue ./install, and
+./download to get all the required packages (ubuntu/debian only)
+
+Notes to self (for linux)
+-------------------------
+
+- Set up Vundle with:
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 And then :BundleInstall in vim
-
-Notes to self (for linux)
--------------------------
 
 - To get remap keyboard, go to /etc/default/keyboard and fix it there
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
 
 - Install inconsolate by moving otf font to /usr/share/fonts/truetype/inconsolata/
   and issuing "sudo fc-cache -fv"
-
-- Move misc/i3.config to .config/i3/config

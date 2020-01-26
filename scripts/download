@@ -1,10 +1,11 @@
 #!/bin/bash
 
 sudo apt-get update && \
-sudo apt-get upgrade && \
-sudo apt-get install \
+sudo apt-get upgrade -y && \
+sudo apt-get install -y \
 lightdm mate-desktop-environment indicator-applet-complete \
 mate-utils ubuntu-mate-icon-themes ubuntu-mate-themes \
 transmission-gtk i3-wm vlc suckless-tools \
 firefox vim vim-gtk unzip \
-build-essential git ssh mosh tmux bash-completion
+build-essential git ssh mosh tmux bash-completion \
+libavcodec-extra ubuntu-restricted-extras
