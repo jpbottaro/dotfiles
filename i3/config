@@ -163,5 +163,5 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id i3-msg 'workspace web; exec firefox'
 exec --no-startup-id i3-msg 'workspace term; exec i3-sensible-terminal; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace vim; exec gvim'
+exec --no-startup-id i3-msg 'workspace vim; exec gvim; exec gvim'
 exec --no-startup-id i3-msg 'workspace web'
