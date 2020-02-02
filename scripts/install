@@ -4,19 +4,18 @@ cd ..
 
 for name in *; do
     target="$HOME/.$name"
-        if [[ $name == 'bin' ]]; then
-            # Harcoded bin reference
-            target="$HOME/$name"
+    if [[ $name == 'gtk-3.0' ]]; then
+        mkdir -p ~/.config
+        target="$HOME/.config/gtk-3.0"
+    fi
+    if [[ $name != 'misc' && $name != 'README' && $name != 'scripts' ]]; then
+        echo "Creating $target"
+        if [ -e $target ]; then
+            mv "$target" "$target".bk
         fi
-        if [[ $name != 'misc' && $name != 'README' && $name != 'scripts' ]]; then
-            echo "Creating $target"
-            if [ -e $target ]; then
-                mv "$target" "$target".bk
-            fi
-            if [ -h $target ]; then
-                rm "$target"
-            fi
-            ln -s "$PWD/$name" "$target"
+        if [ -h $target ]; then
+            rm "$target"
         fi
+        ln -s "$PWD/$name" "$target"
+    fi
 done
-

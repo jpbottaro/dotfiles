@@ -8,7 +8,7 @@ set columns=999
 set lines=999
 
 " set font to inconsolata (remember to install it first)
-set guifont=Inconsolata\ 10
+set guifont=Inconsolata\ 12
 
 " set visual bell (this removes the audio bell on osx)
 set novb

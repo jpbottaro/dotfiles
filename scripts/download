@@ -4,10 +4,10 @@ sudo apt-get update && \
 sudo apt-get upgrade -y && \
 sudo apt-get install -y \
 lightdm lightdm-autologin-greeter mate-desktop-environment \
-mate-tweak mate-utils \
+mate-tweak mate-utils fonts-inconsolata \
 mate-session-manager mate-screensaver mate-indicator-applet \
 ubuntu-wallpapers ubuntu-mate-icon-themes ubuntu-mate-themes \
 transmission-gtk i3-wm vlc suckless-tools \
-firefox vim vim-gtk unzip \
+firefox vim vim-gtk3 unzip \
 build-essential git ssh mosh tmux bash-completion \
 openjdk-14-jdk
