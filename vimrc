@@ -39,6 +39,24 @@ set history=100
 " sane backspace
 set backspace=indent,eol,start
 
+" disable arrow keys
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+map <S-Left> <Nop>
+map <S-Right> <Nop>
+map <S-Up> <Nop>
+map <S-Down> <Nop>
+map! <Left> <Nop>
+map! <Right> <Nop>
+map! <Up> <Nop>
+map! <Down> <Nop>
+map! <S-Left> <Nop>
+map! <S-Right> <Nop>
+map! <S-Up> <Nop>
+map! <S-Down> <Nop>
+
 " * User Interface
 """"""""""""""""""
 
