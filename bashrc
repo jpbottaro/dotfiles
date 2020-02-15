@@ -12,10 +12,10 @@ esac
 export EDITOR=vim
 
 # Go path
-export GOPATH=~/dev/go
+export GOPATH=~/.go
 
 # path
-export PATH=~/bin:$GOPATH/bin:$PATH
+export PATH=~/bin:~/.cargo/bin:$GOPATH/bin:$PATH
 
 # use CTRL-T to go forward in history search
 bind '\C-t:forward-search-history'
