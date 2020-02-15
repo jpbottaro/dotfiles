@@ -14,12 +14,11 @@ try
     Plugin 'vim-airline/vim-airline'
     Plugin 'scrooloose/nerdtree'
     Plugin 'hashivim/vim-terraform'
+    Plugin 'rust-lang/rust.vim'
 
     call vundle#end()
 catch
 endtry
-
-filetype plugin indent on
 
 " autoread when a file is changed from the outside
 set autoread
@@ -64,6 +63,7 @@ set smartcase
 
 " highlight as you type you search phrase
 set incsearch
+set nohlsearch
 
 " show matching bracets when text indicator is over them
 set showmatch
@@ -162,3 +162,8 @@ let NERDTreeIgnore = ['\.pyc$']
 
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
+
+" * Rust
+""""""""
+
+let g:rustfmt_autosave = 1
