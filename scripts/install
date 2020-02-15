@@ -4,9 +4,9 @@ cd ..
 
 for name in *; do
     target="$HOME/.$name"
-    if [[ $name == 'gtk-3.0' ]]; then
+    if [[ $name == 'gtk-3.0' || $name == 'nvim' ]]; then
         mkdir -p ~/.config
-        target="$HOME/.config/gtk-3.0"
+        target="$HOME/.config/$name"
     fi
     if [[ $name != 'misc' && $name != 'README' && $name != 'scripts' ]]; then
         echo "Creating $target"

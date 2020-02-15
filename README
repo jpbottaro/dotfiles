@@ -6,14 +6,15 @@ Best suited for ubuntu core/server.
 To install, go to scripts/ and issue ./install, and
 ./download to get all the required packages (ubuntu/debian only)
 
-Notes to self (for linux)
--------------------------
+# Notes to self
 
 - Set up Vundle with:
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+```sh
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-And then :BundleInstall in vim
+vim +PluginInstall +qall
+```
 
 - To get remap keyboard, go to /etc/default/keyboard and fix it there
 (ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup

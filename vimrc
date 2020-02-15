@@ -1,24 +1,24 @@
 " dont emulate vi
 set nocompatible
-filetype on
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+try
+    call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+    " let Vundle manage Vundle, required
+    Plugin 'VundleVim/Vundle.vim'
 
-" original repos on github
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-commentary'
+    " original repos on github
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'hashivim/vim-terraform'
 
-" enable filetype plugin
+    call vundle#end()
+catch
+endtry
+
 filetype plugin indent on
 
 " autoread when a file is changed from the outside
@@ -47,7 +47,7 @@ set backspace=indent,eol,start
 syntax on
 
 " don't break syntax highlighting, always rescan from start
-syntax sync minlines=300
+syntax sync minlines=500
 
 " show line numbers
 set nu
@@ -100,25 +100,12 @@ set nobackup
 set nowb
 set noswapfile
 
-" persistent undo (vim 7.3)
-try
-	set undodir=~/.vim/vimundodir
-	set undofile
-catch
-endtry
+" persist undo
+set undodir=~/.vim/vimundodir
+set undofile
 
 " * Bindings
 """"""""""""""""
-
-" smart way yo move between windows
-map  <C-j> :wincmd w<cr>
-imap <C-j> :wincmd w<cr>
-map  <C-k> :wincmd W<cr>
-imap <C-k> :wincmd W<cr>
-map  <C-h> :wincmd <<cr>
-imap <C-h> :wincmd <<cr>
-map  <C-l> :wincmd ><cr>
-imap <C-l> :wincmd ><cr>
 
 " quit insert mode with jk
 imap jk <Esc>
@@ -169,3 +156,9 @@ let g:airline_theme='dark'
 
 map <C-O> :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['\.pyc$']
+
+" * Terraform
+"""""""""""""
+
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1

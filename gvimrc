@@ -1,14 +1,17 @@
-" remove bars (scroll r, menu m, icon T, scrollbar L)
-set guioptions-=mr
-set guioptions-=T
-set guioptions-=L
-
-" set columns and lines so they fit the screen
-set columns=999
-set lines=999
+" remove bars
+set guioptions=
 
 " set font to inconsolata (remember to install it first)
 set guifont=Inconsolata\ 12
+
+" nvim-qt fixes
+try
+    GuiTabline 0
+    GuiFont Inconsolata:h12
+    set mouse=a
+    vmap <LeftRelease> "*ygv
+catch
+endtry
 
 " set visual bell (this removes the audio bell on osx)
 set novb

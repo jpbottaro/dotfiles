@@ -8,6 +8,6 @@ mate-tweak mate-utils fonts-inconsolata \
 mate-session-manager mate-screensaver mate-indicator-applet \
 ubuntu-wallpapers ubuntu-mate-icon-themes ubuntu-mate-themes \
 transmission-gtk i3-wm vlc suckless-tools \
-firefox vim vim-gtk3 unzip \
+firefox neovim neovim-qt unzip \
 build-essential git ssh mosh tmux bash-completion \
 openjdk-14-jdk
