@@ -10,4 +10,4 @@ ubuntu-wallpapers ubuntu-mate-icon-themes ubuntu-mate-themes \
 transmission-gtk i3-wm vlc suckless-tools \
 firefox neovim neovim-qt unzip \
 build-essential git ssh mosh tmux bash-completion \
-openjdk-14-jdk rustc golang
+openjdk-14-jdk golang
