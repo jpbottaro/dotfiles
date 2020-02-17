@@ -26,6 +26,18 @@
       <shortcut-conflict owner="ide">
         <text>ctrl pressed T</text>
       </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed W</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed N</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed TAB</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>shift ctrl pressed TAB</text>
+      </shortcut-conflict>
     </shortcut-conflicts>
     <editor />
     <notifications>
