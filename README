@@ -24,9 +24,3 @@ vim +PluginInstall +qall
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
-
-- Use Emacs-style shortcuts in gtk:
-
-```sh
-dconf write /org/mate/desktop/interface/gtk-key-theme "'Emacs'"
-```
