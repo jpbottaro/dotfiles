@@ -1,12 +1,16 @@
-Ubuntu Mate + i3
-----------------
+Fedora
+------
 
-Best suited for ubuntu core/server.
-
-To install, go to scripts/ and issue ./install, and
-./download to get all the required packages (ubuntu/debian only)
+To install, go to scripts/ and issue ./install
 
 # Notes to self
+
+- Fix terminal shortcuts
+
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Control>Tab'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Control><Shift>Tab'
+gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 
 - Set up Vundle with:
 
@@ -15,9 +19,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 vim +PluginInstall +qall
 ```
-
-- To get remap keyboard, go to /etc/default/keyboard and fix it there
-(ctrl:nocaps to override caps lock), and run dpkg-reconfigure console-setup
 
 - To install rust:
 

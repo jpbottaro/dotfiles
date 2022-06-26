@@ -9,6 +9,7 @@ __git_shortcut  gpu   pull
 __git_shortcut  gco   checkout
 __git_shortcut  gc    commit -v
 __git_shortcut  gd    diff
+__git_shortcut  gr    rm
 
 alias gs='git status -sb'
 alias gca='git commit -a -v'
@@ -16,6 +17,7 @@ alias gdl='git diff @{1}..'
 alias gdc='git diff --cached'
 alias gl='git log --no-merges --stat'
 alias gls='git log --graph --decorate --oneline'
+alias gr='git rm'
 
 alias shut='su -c "shutdown -h now"'
 alias reb='su -c "shutdown -r now"'
