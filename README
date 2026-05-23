@@ -1,14 +1,22 @@
 Fedora
 ------
 
-To install, go to scripts/ and issue ./install
+From scripts/:
 
-# Notes to self
+    ./download   # install packages
+    ./install    # symlink dotfiles into $HOME (idempotent)
 
-- Set up Vundle with:
+Neovim
+------
 
-```sh
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+Config lives in nvim/ (Lua + lazy.nvim). On first `nvim` launch, lazy.nvim
+bootstraps itself and installs the plugins (treesitter + lualine); treesitter
+parsers install per language automatically. No manual setup needed.
 
-vim +PluginInstall +qall
-```
+Vim (legacy)
+------------
+
+Plain `vim` still uses vimrc + Vundle:
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
