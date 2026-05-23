@@ -1,6 +1,4 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -15,9 +13,6 @@ export VISUAL=nvim
 # path
 export PATH=~/.local/bin:~/bin:$PATH
 
-# use CTRL-T to go forward in history search
-bind '\C-t:forward-search-history'
-
 # history: drop dup/space-prefixed lines, keep it big and timestamped
 HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=100000
@@ -31,8 +26,7 @@ shopt -s histappend cmdhist
 # append "; history -n" for live sharing across already-open tmux panes.
 PROMPT_COMMAND="history -a${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# update LINES/COLUMNS after each command
 shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -42,33 +36,25 @@ RED="\[\033[0;31m\]"
 CYAN="\[\033[0;36m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
-WHITE="\[\033[0;29m\]"
+RESET="\[\033[0m\]"
 
 # user@host in a distinct color on the rpi boxes
 if [[ $HOSTNAME == *rpi* ]]; then HOSTCOLOR="$CYAN"; else HOSTCOLOR="$RED"; fi
 
-PS1="$HOSTCOLOR\u@\h $YELLOW\w$GREEN\$(__git_ps1) $WHITE\$ "
+PS1="$HOSTCOLOR\u@\h $YELLOW\w$GREEN\$(__git_ps1) $RESET\$ "
 
-# enable color support of ls and also add handy aliases
+# color support for ls and grep
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-   . ~/.bash_aliases
-fi
+# aliases
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # git prompt helper (path differs across distros; degrade gracefully)
 for f in /usr/share/git-core/contrib/completion/git-prompt.sh \
@@ -90,6 +76,5 @@ if command -v fzf >/dev/null; then
     fi
 fi
 
-alias set-docked='sudo grubby --update-kernel=ALL --args="drm.edid_firmware=HDMI-A-1:edid/pg27ucdm.bin video=HDMI-A-1:e" && echo "Ready for Dock. Reboot now."'
-alias set-travel='sudo grubby --update-kernel=ALL --remove-args="drm.edid_firmware=HDMI-A-1:edid/pg27ucdm.bin video=HDMI-A-1:e" && echo "Ready for Travel. Reboot now."'
-
+# machine-specific settings (not tracked in the repo)
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
