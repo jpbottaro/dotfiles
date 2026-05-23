@@ -39,6 +39,3 @@ opt.timeoutlen = 400
 
 -- reload files changed outside of nvim
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
-
--- colorscheme: built-in, gruvbox-flavored (no plugin needed)
-vim.cmd.colorscheme("retrobox")
