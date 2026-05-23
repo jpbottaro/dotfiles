@@ -1,3 +1,12 @@
+# Load git's completion up front so __git_complete and the _git_* functions
+# exist for the aliases below. bash-completion only lazy-loads them on the
+# first `git <tab>`, which is too late when this file is sourced at startup.
+for f in /usr/share/bash-completion/completions/git \
+         /usr/share/git-core/contrib/completion/git-completion.bash \
+         /etc/bash_completion.d/git; do
+    [ -f "$f" ] && . "$f" && break
+done
+
 __git_shortcut () {
     alias $1="git $2 $3"
     __git_complete $1 _git_$2 &>/dev/null
@@ -9,6 +18,7 @@ __git_shortcut  gpu   pull
 __git_shortcut  gco   checkout
 __git_shortcut  gc    commit -v
 __git_shortcut  gd    diff
+__git_shortcut  gb    branch
 __git_shortcut  gr    rm
 
 alias gs='git status -sb'
