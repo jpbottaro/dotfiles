@@ -23,7 +23,6 @@ opt.autoindent = true
 opt.smartindent = true
 opt.smarttab = true
 opt.textwidth = 80
-opt.colorcolumn = "80"
 
 -- files: no backup/swap, persistent undo (nvim picks its own undodir)
 opt.backup = false
