@@ -66,17 +66,23 @@ if [ -f ~/.bash_aliases ]; then
    . ~/.bash_aliases
 fi
 
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-   . /usr/share/git-core/contrib/completion/git-prompt.sh
-fi
+# git prompt helper (path differs across distros; degrade gracefully)
+for f in /usr/share/git-core/contrib/completion/git-prompt.sh \
+         /usr/lib/git-core/git-sh-prompt \
+         /etc/bash_completion.d/git-prompt; do
+    [ -f "$f" ] && . "$f" && break
+done
+type __git_ps1 &>/dev/null || __git_ps1() { :; }
 
 # fzf: fuzzy Ctrl-R history search (and Ctrl-T file finder)
 if command -v fzf >/dev/null; then
     if fzf --bash >/dev/null 2>&1; then
         eval "$(fzf --bash)"                              # fzf >= 0.48
-    elif [ -f /usr/share/fzf/shell/key-bindings.bash ]; then
-        . /usr/share/fzf/shell/key-bindings.bash          # older fzf
-        [ -f /usr/share/fzf/shell/completion.bash ] && . /usr/share/fzf/shell/completion.bash
+    else                                                  # older fzf: source distro files
+        for f in /usr/share/fzf/shell/key-bindings.bash \
+                 /usr/share/doc/fzf/examples/key-bindings.bash; do
+            [ -f "$f" ] && . "$f" && break
+        done
     fi
 fi
 
