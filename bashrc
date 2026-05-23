@@ -9,7 +9,8 @@ case $- in
 esac
 
 # editor
-export EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # path
 export PATH=~/.local/bin:~/bin:$PATH

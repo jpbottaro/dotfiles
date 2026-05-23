@@ -21,3 +21,7 @@ alias gls='git log --graph --decorate --oneline'
 alias shut='systemctl poweroff'
 alias reb='systemctl reboot'
 alias att='tmux attach'
+
+# use neovim everywhere
+alias vim=nvim
+alias vi=nvim
