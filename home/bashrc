@@ -39,11 +39,15 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 RED="\[\033[0;31m\]"
+CYAN="\[\033[0;36m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 WHITE="\[\033[0;29m\]"
 
-PS1="$RED\u@\h $YELLOW\w$GREEN\$(__git_ps1) $WHITE\$ "
+# user@host in a distinct color on the rpi boxes
+if [[ $HOSTNAME == *rpi* ]]; then HOSTCOLOR="$CYAN"; else HOSTCOLOR="$RED"; fi
+
+PS1="$HOSTCOLOR\u@\h $YELLOW\w$GREEN\$(__git_ps1) $WHITE\$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
