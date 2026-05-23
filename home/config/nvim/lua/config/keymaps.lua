@@ -1,4 +1,4 @@
--- General keymaps (LSP keymaps live in the lspconfig spec).
+-- General keymaps.
 local map = vim.keymap.set
 
 -- jk leaves insert mode (kept from the old vimrc)

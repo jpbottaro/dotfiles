@@ -37,6 +37,18 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 opt.updatetime = 250
 opt.timeoutlen = 400
 
+-- system clipboard: native tools when there's a display, OSC52 when headless
+-- (e.g. editing on the Pi over ssh/mosh) so yanks reach the local clipboard
+opt.clipboard = "unnamedplus"
+if not (os.getenv("DISPLAY") or os.getenv("WAYLAND_DISPLAY")) then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "osc52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = osc52.paste("+"), ["*"] = osc52.paste("*") },
+  }
+end
+
 -- reload files changed outside of nvim
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
 
