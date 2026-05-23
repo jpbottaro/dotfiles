@@ -19,6 +19,10 @@ Setup
 package manager, then symlinks everything under `home/` into `$HOME`. It is
 idempotent — re-run any time. Real files it would clobber are saved as `*.bak`.
 
+It also installs Tailscale and enables the daemon on every machine (adding
+Tailscale's apt repo on Debian/RPi OS, since Fedora packages it directly). Log
+in once per machine with `sudo tailscale up` — that interactive step is manual.
+
 Layout
 ------
 

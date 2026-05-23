@@ -50,6 +50,22 @@ pkg_install() {
   esac
 }
 
+# Fedora packages tailscale in its default repos; Debian/RPi OS does not (or
+# lags badly), so add Tailscale's official apt repo there first. The .deb
+# auto-enables the daemon, the Fedora rpm does not -- enable it either way.
+# The one-time interactive login (`sudo tailscale up`) is left to the operator.
+setup_tailscale() {
+  if [ "$PM" = apt ] && [ ! -f /etc/apt/sources.list.d/tailscale.list ]; then
+    local codename; codename=$(. /etc/os-release && echo "${VERSION_CODENAME:-stable}")
+    curl -fsSL "https://pkgs.tailscale.com/stable/debian/$codename.noarmor.gpg" \
+      | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+    curl -fsSL "https://pkgs.tailscale.com/stable/debian/$codename.tailscale-keyring.list" \
+      | sudo tee /etc/apt/sources.list.d/tailscale.list >/dev/null
+  fi
+  pkg_install tailscale
+  sudo systemctl enable --now tailscaled
+}
+
 do_packages() {
   mapfile -t common < <(pkg_list "$REPO/packages/common")
   pkg_install "${common[@]}"
@@ -71,6 +87,8 @@ do_packages() {
       echo ">> desktop extras are only wired up for Fedora/dnf; skipping on $PM"
     fi
   fi
+
+  setup_tailscale   # installed on every machine (server + desktop)
 
   # Debian ships these under different binary names; expose the usual ones.
   mkdir -p "$HOME/.local/bin"
