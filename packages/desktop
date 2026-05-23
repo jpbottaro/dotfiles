@@ -1,5 +1,8 @@
 # GUI apps, installed only on a desktop machine (currently Fedora/dnf only).
-# discord + steam need the rpmfusion repos, which bootstrap enables first.
+# bootstrap enables the extra sources these need first:
+#   discord, steam  -> rpmfusion (free + nonfree)
+#   spotify-client  -> negativo17 repo
 firefox
 discord
 steam
+spotify-client
