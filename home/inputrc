@@ -5,9 +5,7 @@ $include /etc/inputrc
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-# completion: case-insensitive, show choices on first Tab, colorized
-set completion-ignore-case on
-set completion-map-case on
+# completion: case-sensitive, show choices on first Tab, colorized
 set show-all-if-ambiguous on
 set colored-stats on
 set colored-completion-prefix on
