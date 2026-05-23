@@ -1,0 +1,17 @@
+# keep the system defaults
+$include /etc/inputrc
+
+# Up/Down search history by what's already typed (prefix match)
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# completion: case-insensitive, show choices on first Tab, colorized
+set completion-ignore-case on
+set completion-map-case on
+set show-all-if-ambiguous on
+set colored-stats on
+set colored-completion-prefix on
+set menu-complete-display-prefix on
+
+# treat hyphen/underscore as equivalent when completing
+set mark-symlinked-directories on
