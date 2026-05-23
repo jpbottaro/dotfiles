@@ -1,1 +1,2 @@
-pycharm
+*.bak
+.DS_Store

@@ -1,22 +1,35 @@
-Fedora
+dotfiles
+========
+
+Personal dotfiles + machine setup. Drop-in: works on Fedora (dnf) and
+Debian / Raspberry Pi OS (apt), desktop or headless.
+
+Setup
+-----
+
+    git clone git@github.com:jpbottaro/dotfiles.git
+    cd dotfiles
+    ./bootstrap              # auto-detects desktop vs server
+
+    ./bootstrap --server     # force minimal (no GUI apps)
+    ./bootstrap --desktop     # force GUI extras
+    ./bootstrap link          # only re-create symlinks (no package install)
+
+`bootstrap` installs the packages listed in `packages/` via the machine's
+package manager, then symlinks everything under `home/` into `$HOME`. It is
+idempotent — re-run any time. Real files it would clobber are saved as `*.bak`.
+
+Layout
 ------
 
-From scripts/:
+    home/              configs, mirrored into $HOME (home/config/* -> ~/.config/*)
+    packages/common    CLI packages installed everywhere
+    packages/desktop   GUI apps (Fedora desktop only)
+    bootstrap          the installer
 
-    ./download   # install packages
-    ./install    # symlink dotfiles into $HOME (idempotent)
+Editors
+-------
 
-Neovim
-------
-
-Config lives in nvim/ (Lua + lazy.nvim). On first `nvim` launch, lazy.nvim
-bootstraps itself and installs the plugins (treesitter + lualine); treesitter
-parsers install per language automatically. No manual setup needed.
-
-Vim (legacy)
-------------
-
-Plain `vim` still uses vimrc + Vundle:
-
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+Neovim is the default (`EDITOR=nvim`, `vim` aliased to `nvim`). Its config is
+`home/config/nvim` (Lua + lazy.nvim); plugins bootstrap on first launch.
+`home/vimrc` is a tiny dependency-free fallback for plain vim.
