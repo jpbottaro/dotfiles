@@ -12,21 +12,23 @@ esac
 export EDITOR=vim
 
 # path
-export PATH=~/bin:$PATH
+export PATH=~/.local/bin:~/bin:$PATH
 
 # use CTRL-T to go forward in history search
 bind '\C-t:forward-search-history'
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+# history: drop dup/space-prefixed lines, keep it big and timestamped
+HISTCONTROL=ignoreboth:erasedups
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTTIMEFORMAT='%F %T '
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# append (don't clobber) and store multi-line commands as a single entry
+shopt -s histappend cmdhist
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# flush each command to the history file immediately; new shells pick it up.
+# append "; history -n" for live sharing across already-open tmux panes.
+PROMPT_COMMAND="history -a${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -66,3 +68,17 @@ fi
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
    . /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
+
+# fzf: fuzzy Ctrl-R history search (and Ctrl-T file finder)
+if command -v fzf >/dev/null; then
+    if fzf --bash >/dev/null 2>&1; then
+        eval "$(fzf --bash)"                              # fzf >= 0.48
+    elif [ -f /usr/share/fzf/shell/key-bindings.bash ]; then
+        . /usr/share/fzf/shell/key-bindings.bash          # older fzf
+        [ -f /usr/share/fzf/shell/completion.bash ] && . /usr/share/fzf/shell/completion.bash
+    fi
+fi
+
+alias set-docked='sudo grubby --update-kernel=ALL --args="drm.edid_firmware=HDMI-A-1:edid/pg27ucdm.bin video=HDMI-A-1:e" && echo "Ready for Dock. Reboot now."'
+alias set-travel='sudo grubby --update-kernel=ALL --remove-args="drm.edid_firmware=HDMI-A-1:edid/pg27ucdm.bin video=HDMI-A-1:e" && echo "Ready for Travel. Reboot now."'
+
