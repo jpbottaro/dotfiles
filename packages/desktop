@@ -1,4 +1,4 @@
-# GUI apps, installed only on a desktop machine (currently Fedora/dnf only).
+# Desktop-only packages (currently Fedora/dnf only).
 # bootstrap enables the extra sources these need first:
 #   discord, steam  -> rpmfusion (free + nonfree)
 #   spotify-client  -> negativo17 repo
@@ -6,3 +6,4 @@ firefox
 discord
 steam
 spotify-client
+wl-clipboard
