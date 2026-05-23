@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# Drop-in machine setup: install packages and symlink configs into $HOME.
+#
+#   ./bootstrap                 # install packages + link (auto desktop/server)
+#   ./bootstrap link            # only (re)create symlinks, no package install
+#   ./bootstrap packages        # only install packages
+#   ./bootstrap [...] --server  # force minimal set (no GUI apps)
+#   ./bootstrap [...] --desktop # force GUI extras
+#
+# Works on Fedora (dnf) and Debian / Raspberry Pi OS (apt). Idempotent.
+set -euo pipefail
+
+REPO="$(cd "$(dirname "$0")" && pwd)"
+
+# ---- args ---------------------------------------------------------------
+ACTION=all          # all | link | packages
+MODE=auto           # auto | desktop | server
+for arg in "$@"; do
+  case $arg in
+    all|link|packages) ACTION=$arg ;;
+    --server)  MODE=server ;;
+    --desktop) MODE=desktop ;;
+    *) echo "unknown argument: $arg" >&2; exit 1 ;;
+  esac
+done
+
+# ---- detect environment -------------------------------------------------
+if   command -v apt-get >/dev/null; then PM=apt
+elif command -v dnf     >/dev/null; then PM=dnf
+else echo "unsupported system: need apt or dnf" >&2; exit 1
+fi
+
+if [ "$MODE" = auto ]; then
+  if [ -n "${XDG_CURRENT_DESKTOP:-}" ] || systemctl get-default 2>/dev/null | grep -q graphical; then
+    MODE=desktop
+  else
+    MODE=server
+  fi
+fi
+echo ">> package manager: $PM | mode: $MODE | action: $ACTION"
+
+# ---- packages -----------------------------------------------------------
+pkg_list() { grep -vE '^\s*(#|$)' "$1" 2>/dev/null || true; }
+
+pkg_install() {
+  [ "$#" -eq 0 ] && return 0
+  case $PM in
+    apt) sudo apt-get update -qq; sudo apt-get install -y "$@" ;;
+    dnf) sudo dnf install -y "$@" ;;
+  esac
+}
+
+do_packages() {
+  mapfile -t common < <(pkg_list "$REPO/packages/common")
+  pkg_install "${common[@]}"
+
+  if [ "$MODE" = desktop ]; then
+    if [ "$PM" = dnf ]; then
+      sudo dnf install -y \
+        "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
+        "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" || true
+      mapfile -t desktop < <(pkg_list "$REPO/packages/desktop")
+      pkg_install "${desktop[@]}"
+    else
+      echo ">> desktop extras are only wired up for Fedora/dnf; skipping on $PM"
+    fi
+  fi
+
+  # Debian ships these under different binary names; expose the usual ones.
+  mkdir -p "$HOME/.local/bin"
+  if command -v batcat >/dev/null && ! command -v bat >/dev/null; then
+    ln -sfn "$(command -v batcat)" "$HOME/.local/bin/bat"
+  fi
+  if command -v fdfind >/dev/null && ! command -v fd >/dev/null; then
+    ln -sfn "$(command -v fdfind)" "$HOME/.local/bin/fd"
+  fi
+}
+
+# ---- symlinks -----------------------------------------------------------
+link() {  # link <src> <dest>
+  local src=$1 dest=$2
+  if [ "$(readlink -f "$src")" = "$(readlink -f "$dest" 2>/dev/null)" ]; then
+    return 0
+  fi
+  if [ -e "$dest" ] && [ ! -L "$dest" ]; then
+    mv "$dest" "$dest.bak"
+    echo "backed up $dest -> $dest.bak"
+  fi
+  ln -sfn "$src" "$dest"
+  echo "linked $dest"
+}
+
+do_link() {
+  for path in "$REPO"/home/*; do
+    name=$(basename "$path")
+    if [ "$name" = config ]; then        # home/config/* -> ~/.config/*
+      mkdir -p "$HOME/.config"
+      for cfg in "$path"/*; do
+        link "$cfg" "$HOME/.config/$(basename "$cfg")"
+      done
+    else                                  # home/<name> -> ~/.<name>
+      link "$path" "$HOME/.$name"
+    fi
+  done
+}
+
+# ---- run ----------------------------------------------------------------
+if [ "$ACTION" = all ] || [ "$ACTION" = packages ]; then do_packages; fi
+if [ "$ACTION" = all ] || [ "$ACTION" = link ];     then do_link; fi
+echo ">> done"

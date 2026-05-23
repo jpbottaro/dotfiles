@@ -1,0 +1,14 @@
+# CLI packages installed on every machine (Fedora + Debian/RPi OS).
+# Package names match on both apt and dnf. Binary-name drift on Debian
+# (bat->batcat, fd-find->fdfind) is fixed up by bootstrap.
+git
+tmux
+neovim
+ripgrep
+fzf
+bat
+fd-find
+mosh
+bash-completion
+unzip
+curl

@@ -1,15 +1,16 @@
 # dotfiles
 
-Personal dotfiles, symlinked into `$HOME` (see `README`).
+Personal dotfiles + cross-distro machine setup. Everything under `home/` is
+symlinked into `$HOME` by `./bootstrap` (see `README`).
 
 ## Commit message modules
 
 Prefix every commit subject with `[module]`. Valid modules:
 
-- `bash` — `bashrc`, `bash_aliases`
-- `tmux` — `tmux.conf`
-- `vim` — `vimrc`, `nvim/`
-- `git` — `gitconfig`, `gitignore_global`
-- `inputrc` — readline config
-- `scripts` — `scripts/`
+- `bash` — `home/bashrc`, `home/bash_aliases`
+- `tmux` — `home/tmux.conf`
+- `vim` — `home/vimrc`, `home/config/nvim/`
+- `git` — `home/gitconfig`, `home/gitignore_global`
+- `inputrc` — `home/inputrc`
+- `build` — `bootstrap`, `packages/`
 - `docs` — `README`, this file

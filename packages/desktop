@@ -1,0 +1,5 @@
+# GUI apps, installed only on a desktop machine (currently Fedora/dnf only).
+# discord + steam need the rpmfusion repos, which bootstrap enables first.
+firefox
+discord
+steam
