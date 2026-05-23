@@ -2,8 +2,8 @@
 	email = jpbottaro@gmail.com
 	name = Juan Pablo Bottaro
 [core]
-	excludesfile = /home/jpbottaro/.gitignore_global
-	editor = vim
+	excludesfile = ~/.gitignore_global
+	editor = nvim
 [color]
 	ui = auto
 [init]
