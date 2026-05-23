@@ -1,2 +1,5 @@
 *.bak
 .DS_Store
+
+# per-machine nvim plugin lock; rewritten on every install, not worth tracking
+lazy-lock.json
