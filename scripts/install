@@ -1,21 +1,27 @@
 #!/bin/bash
+# Symlink every tracked dotfile into $HOME (or ~/.config for a few).
+# Idempotent: skips links that are already correct, only backs up real files.
 
-cd ..
+cd "$(dirname "$0")/.." || exit 1
+
+skip='README scripts CLAUDE.md misc'
 
 for name in *; do
-    target="$HOME/.$name"
+    [[ " $skip " == *" $name "* ]] && continue
+
     if [[ $name == 'gtk-3.0' || $name == 'nvim' ]]; then
         mkdir -p ~/.config
         target="$HOME/.config/$name"
+    else
+        target="$HOME/.$name"
     fi
-    if [[ $name != 'misc' && $name != 'README' && $name != 'scripts' ]]; then
-        echo "Creating $target"
-        if [ -e $target ]; then
-            mv "$target" "$target".bk
-        fi
-        if [ -h $target ]; then
-            rm "$target"
-        fi
-        ln -s "$PWD/$name" "$target"
-    fi
+
+    # already linked to the right place -> nothing to do
+    [[ "$(readlink -f "$target")" == "$PWD/$name" ]] && continue
+
+    # back up a real file/dir (not a symlink) before replacing it
+    [[ -e $target && ! -h $target ]] && mv "$target" "$target.bk"
+
+    ln -sfn "$PWD/$name" "$target"
+    echo "linked $target"
 done
