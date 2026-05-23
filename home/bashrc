@@ -18,6 +18,7 @@ HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=100000
 HISTFILESIZE=200000
 HISTTIMEFORMAT='%F %T '
+HISTIGNORE='ls:la:ll:cd:pwd:exit:clear:history'
 
 # append (don't clobber) and store multi-line commands as a single entry
 shopt -s histappend cmdhist
