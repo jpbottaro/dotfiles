@@ -1,15 +1,5 @@
 -- Plugin specs, imported by lazy.nvim. Deliberately minimal.
 return {
-  -- colorscheme (warm, desert-flavored)
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = function()
-      vim.o.background = "dark"
-      vim.cmd.colorscheme("gruvbox")
-    end,
-  },
-
   -- statusline (replaces vim-airline)
   {
     "nvim-lualine/lualine.nvim",
