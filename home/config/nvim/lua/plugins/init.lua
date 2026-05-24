@@ -1,14 +1,5 @@
 -- Plugin specs, imported by lazy.nvim. Deliberately minimal.
 return {
-  -- statusline (replaces vim-airline)
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      options = { theme = "auto", globalstatus = true },
-    },
-  },
-
   -- syntax / indent via treesitter (replaces `syntax on`)
   {
     "nvim-treesitter/nvim-treesitter",
