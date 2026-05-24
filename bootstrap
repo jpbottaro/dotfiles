@@ -66,6 +66,20 @@ setup_tailscale() {
   sudo systemctl enable --now tailscaled
 }
 
+# Ensure the UTF-8 locales we use (en_US, es_ES) exist. A mosh-server on a fresh
+# box refuses to start unless it has a UTF-8 locale matching the client's
+# forwarded LANG/LC_*; Debian must generate them, Fedora ships them as langpacks.
+setup_locales() {
+  case $PM in
+    apt)
+      pkg_install locales
+      sudo sed -i -E 's/^#[[:space:]]*(en_US\.UTF-8 UTF-8)/\1/; s/^#[[:space:]]*(es_ES\.UTF-8 UTF-8)/\1/' /etc/locale.gen
+      sudo locale-gen
+      ;;
+    dnf) pkg_install glibc-langpack-en glibc-langpack-es ;;
+  esac
+}
+
 do_packages() {
   mapfile -t common < <(pkg_list "$REPO/packages/common")
   pkg_install "${common[@]}"
@@ -89,6 +103,7 @@ do_packages() {
   fi
 
   setup_tailscale   # installed on every machine (server + desktop)
+  setup_locales     # ensure en_US/es_ES UTF-8 exist (mosh-server needs a match)
 
   # Debian ships these under different binary names; expose the usual ones.
   mkdir -p "$HOME/.local/bin"
