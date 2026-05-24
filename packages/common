@@ -12,3 +12,6 @@ mosh
 bash-completion
 unzip
 curl
+jq
+btop
+ncdu

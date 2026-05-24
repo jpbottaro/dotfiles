@@ -80,6 +80,30 @@ setup_locales() {
   esac
 }
 
+# GitHub CLI: in Fedora's repos; on Debian/RPi OS add GitHub's apt repo first.
+setup_gh() {
+  if command -v gh >/dev/null; then return 0; fi
+  if [ "$PM" = apt ] && [ ! -f /etc/apt/sources.list.d/github-cli.list ]; then
+    sudo mkdir -p -m 755 /etc/apt/keyrings
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+      | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg >/dev/null
+    sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+      | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+  fi
+  pkg_install gh
+}
+
+# Tools with official user-local installers (no sudo; into ~/.local/bin).
+setup_user_tools() {
+  if ! command -v uv >/dev/null; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh   || echo ">> uv install failed; skipping"
+  fi
+  if ! command -v claude >/dev/null; then
+    curl -fsSL https://claude.ai/install.sh | bash    || echo ">> claude install failed; skipping"
+  fi
+}
+
 do_packages() {
   mapfile -t common < <(pkg_list "$REPO/packages/common")
   pkg_install "${common[@]}"
@@ -104,6 +128,8 @@ do_packages() {
 
   setup_tailscale   # installed on every machine (server + desktop)
   setup_locales     # ensure en_US/es_ES UTF-8 exist (mosh-server needs a match)
+  setup_gh          # GitHub CLI
+  setup_user_tools  # uv + claude (user-local, no sudo)
 
   # Debian ships these under different binary names; expose the usual ones.
   mkdir -p "$HOME/.local/bin"
